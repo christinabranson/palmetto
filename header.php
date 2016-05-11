@@ -27,7 +27,7 @@
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
 				<div class="site-branding">
-					<?php twentysixteen_the_custom_logo(); ?>
+					<?php foundation_the_custom_logo(); ?>
 
 					<?php if ( is_front_page() && is_home() ) : ?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -42,11 +42,11 @@
 				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
+					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'foundation' ); ?></button>
 
 					<div id="site-header-menu" class="site-header-menu">
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
+							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'foundation' ); ?>">
 								<?php
 									wp_nav_menu( array(
 										'theme_location' => 'primary',
@@ -57,7 +57,7 @@
 						<?php endif; ?>
 
 						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
+							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'foundation' ); ?>">
 								<?php
 									wp_nav_menu( array(
 										'theme_location' => 'social',
@@ -76,7 +76,7 @@
 			<?php if ( get_header_image() ) : ?>
 				<?php
 					/**
-					 * Filter the default twentysixteen custom header sizes attribute.
+					 * Filter the default foundation custom header sizes attribute.
 					 *
 					 * @since Twenty Sixteen 1.0
 					 *
@@ -84,7 +84,7 @@
 					 * for Custom Header. Default '(max-width: 709px) 85vw,
 					 * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
 					 */
-					$custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
+					$custom_header_sizes = apply_filters( 'foundation_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
 				?>
 				<div class="header-image">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
