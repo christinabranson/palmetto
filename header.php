@@ -23,20 +23,40 @@
 
 <body <?php body_class(); ?>>
 
-<nav class="top-bar" data-topbar role="navigation">
 
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+      <li>
+        <a href="#">One</a>
+        <ul class="menu vertical">
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+    </ul>
+  </div>
 
-  <section class="top-bar-section">
-    <?php display_primary_menu(); //we will make this function in a bit... ?>
-  </section>
+	<div class="top-bar-right">
+<?php
+		wp_nav_menu(array(
+	    	'container' => false,
+	    	'menu' => __( 'Top Bar Menu', 'textdomain' ),
+	    	'menu_class' => 'dropdown menu',
+	    	'theme_location' => 'topbar-menu',
+	    	'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+	    	//Recommend setting this to false, but if you need a fallback...
+	    	'fallback_cb' => 'f6_topbar_menu_fallback',
+	        'walker' => new F6_TOPBAR_MENU_WALKER(),
+		));
+?>
+	</div>
+</div>
 
-</nav><!-- .top-bar -->
 
 <div class="container">
 	<div class="row">

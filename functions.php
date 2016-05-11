@@ -131,56 +131,56 @@ endif; // foundation_setup
 add_action( 'after_setup_theme', 'foundation_setup' );
 
 
-
-
-/**
- * Primary Menu
- */
-function display_primary_menu() {
-	wp_nav_menu( array(
-		'theme_location' => 'primary',
-		'menu' => 'Primary Menu',
-		'container' => false, // remove nav container
-		'container_class' => '', // class of container
-		'menu_class' => 'top-bar-menu right', // adding custom nav class
-		'before' => '', // before each link <a>
-		'after' => '', // after each link </a>
-		'link_before' => '', // before each link text
-		'link_after' => '', // after each link text
-		'depth' => 5, // limit the depth of the nav
-		'fallback_cb' => false, // fallback function (see below)
-		'walker' => new top_bar_walker()
-	) );
+function _register_menu() {
+	register_nav_menu( 'topbar-menu', __( 'Top Bar Menu','textdomain' ) );
+}
+ 
+//Add Menu to theme setup hook
+add_action( 'after_setup_theme', '_theme_setup' );
+ 
+function _theme_setup()
+{
+	add_action( 'init', '_register_menu' );
+		
+	//Theme Support
+	add_theme_support( 'menus' );
 }
 
-/**
- * Customized menu output
- */
-class top_bar_walker extends Walker_Nav_Menu {
-	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
-		$element->has_children = !empty( $children_elements[$element->ID] );
-		$element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
-		$element->classes[] = ( $element->has_children ) ? 'has-dropdown not-click' : '';
-		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-	}
-	function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
-		$item_html = '';
-		parent::start_el( $item_html, $object, $depth, $args );
-		$output .= ( $depth == 0 ) ? '<li class="divider"></li>' : '';
-		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
-		if ( in_array('label', $classes) ) {
-			$output .= '<li class="divider"></li>';
-			$item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
-		}
-		if ( in_array('divider', $classes) ) {
-			$item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '', $item_html );
-		}
-		$output .= $item_html;
-	}
+
+
+class F6_TOPBAR_MENU_WALKER extends Walker_Nav_Menu
+{   
+	/*
+	 * Add vertical menu class and submenu data attribute to sub menus
+	 */
+	 
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .= "\n<ul class=\"sub-menu dropdown\">\n";
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"vertical menu\" data-submenu>\n";
 	}
 }
+ 
+//Optional fallback
+function f6_topbar_menu_fallback($args)
+{
+	/*
+	 * Instantiate new Page Walker class instead of applying a filter to the
+	 * "wp_page_menu" function in the event there are multiple active menus in theme.
+	 */
+	 
+	$walker_page = new Walker_Page();
+	$fallback = $walker_page->walk(get_pages(), 0);
+	$fallback = str_replace("<ul class='children'>", '<ul class="children submenu menu vertical" data-submenu>', $fallback);
+	
+	echo '<ul class="dropdown menu" data-dropdown-menu">'.$fallback.'</ul>';
+}
+
+
+
+
+
+
+
 
 /**
  * Sets the content width in pixels, based on the theme's design and stylesheet.
