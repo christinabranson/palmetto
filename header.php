@@ -22,6 +22,22 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<nav class="top-bar" data-topbar role="navigation">
+
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <?php display_primary_menu(); //we will make this function in a bit... ?>
+  </section>
+
+</nav><!-- .top-bar -->
+
 <div class="container">
 	<div class="row">
 		<header id="masthead" class="site-header" role="banner">

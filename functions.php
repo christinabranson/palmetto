@@ -130,6 +130,58 @@ function foundation_setup() {
 endif; // foundation_setup
 add_action( 'after_setup_theme', 'foundation_setup' );
 
+
+
+
+/**
+ * Primary Menu
+ */
+function display_primary_menu() {
+	wp_nav_menu( array(
+		'theme_location' => 'primary',
+		'menu' => 'Primary Menu',
+		'container' => false, // remove nav container
+		'container_class' => '', // class of container
+		'menu_class' => 'top-bar-menu right', // adding custom nav class
+		'before' => '', // before each link <a>
+		'after' => '', // after each link </a>
+		'link_before' => '', // before each link text
+		'link_after' => '', // after each link text
+		'depth' => 5, // limit the depth of the nav
+		'fallback_cb' => false, // fallback function (see below)
+		'walker' => new top_bar_walker()
+	) );
+}
+
+/**
+ * Customized menu output
+ */
+class top_bar_walker extends Walker_Nav_Menu {
+	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+		$element->has_children = !empty( $children_elements[$element->ID] );
+		$element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
+		$element->classes[] = ( $element->has_children ) ? 'has-dropdown not-click' : '';
+		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+	}
+	function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+		$item_html = '';
+		parent::start_el( $item_html, $object, $depth, $args );
+		$output .= ( $depth == 0 ) ? '<li class="divider"></li>' : '';
+		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
+		if ( in_array('label', $classes) ) {
+			$output .= '<li class="divider"></li>';
+			$item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
+		}
+		if ( in_array('divider', $classes) ) {
+			$item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '', $item_html );
+		}
+		$output .= $item_html;
+	}
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$output .= "\n<ul class=\"sub-menu dropdown\">\n";
+	}
+}
+
 /**
  * Sets the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -243,51 +295,21 @@ add_action( 'wp_head', 'foundation_javascript_detection', 0 );
  * @since Twenty Sixteen 1.0
  */
 function foundation_scripts() {
-	// Add custom fonts, used in the main stylesheet.
-	//wp_enqueue_style( 'foundation-fonts', foundation_fonts_url(), array(), null );
 
-	// Add Genericons, used in the main stylesheet.
-	//wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+wp_enqueue_style( 'custom', get_stylesheet_uri() );
+
+	/* Add Foundation CSS */
+	wp_enqueue_style( 'foundation-normalize', get_stylesheet_directory_uri() . '/foundation/css/normalize.css' );
+	wp_enqueue_style( 'foundation', get_stylesheet_directory_uri() . '/foundation/css/foundation.css' );
+
+	/* Add Foundation JS */
+	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/vendor/foundation.min.js', array( 'jquery' ), '1', true );
+	wp_enqueue_script( 'foundation-modernizr-js', get_template_directory_uri() . '/foundation/js/vendor/modernizr.js', array( 'jquery' ), '1', true );
+	/* Foundation Init JS */
+	wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation.js', array( 'jquery' ), '1', true );
 
 
-	// Foundation stylesheet.
-	wp_enqueue_style( 'foundation', 'https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css' );
 
-	// Theme stylesheet.
-	wp_enqueue_style( 'foundation-style', get_stylesheet_uri() );
-
-	// Load the Internet Explorer specific stylesheet.
-	//wp_enqueue_style( 'foundation-ie', get_template_directory_uri() . '/css/ie.css', array( 'foundation-style' ), '20160412' );
-	//wp_style_add_data( 'foundation-ie', 'conditional', 'lt IE 10' );
-
-	// Load the Internet Explorer 8 specific stylesheet.
-	//wp_enqueue_style( 'foundation-ie8', get_template_directory_uri() . '/css/ie8.css', array( 'foundation-style' ), '20160412' );
-	//wp_style_add_data( 'foundation-ie8', 'conditional', 'lt IE 9' );
-
-	// Load the Internet Explorer 7 specific stylesheet.
-	//wp_enqueue_style( 'foundation-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'foundation-style' ), '20160412' );
-	//wp_style_add_data( 'foundation-ie7', 'conditional', 'lt IE 8' );
-
-	// Load the html5 shiv.
-	//wp_enqueue_script( 'foundation-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
-	//wp_script_add_data( 'foundation-html5', 'conditional', 'lt IE 9' );
-
-	//wp_enqueue_script( 'foundation-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160412', true );
-
-	//if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	//	wp_enqueue_script( 'comment-reply' );
-	//}
-
-	//if ( is_singular() && wp_attachment_is_image() ) {
-	//	wp_enqueue_script( 'foundation-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
-	//}
-
-	//wp_enqueue_script( 'foundation-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160412', true );
-
-	//wp_localize_script( 'foundation-script', 'screenReaderText', array(
-	//	'expand'   => __( 'expand child menu', 'foundation' ),
-	//	'collapse' => __( 'collapse child menu', 'foundation' ),
-	//) );
 }
 add_action( 'wp_enqueue_scripts', 'foundation_scripts' );
 
