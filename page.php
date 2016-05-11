@@ -13,7 +13,10 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<p>page.php</p>
+
+<div class="row">
+<div class="large-10 columns">
 	<main id="main" class="site-main" role="main">
 		<?php
 		// Start the loop.
@@ -35,7 +38,12 @@ get_header(); ?>
 
 	<?php get_sidebar( 'content-bottom' ); ?>
 
+
+<p>/page.php</p>
+
 </div><!-- .content-area -->
 
+<div class="large-2 columns">
 <?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>

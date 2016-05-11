@@ -8,6 +8,8 @@
  */
 ?>
 
+<div class="row">
+<div class="large-10 columns">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -51,3 +53,9 @@
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+</div>
+
+<div class="large-2 columns">
+<?php get_sidebar(); ?>
+</div>
+</div>
