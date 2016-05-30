@@ -1,35 +1,266 @@
 <?php
-/**
- * Twenty Sixteen functions and definitions
- *
- * Set up the theme and provides some helper functions, which are used in the
- * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
- *
- * When using a child theme you can override certain functions (those wrapped
- * in a function_exists() call) by defining them first in your child theme's
- * functions.php file. The child theme's functions.php file is included before
- * the parent theme's file, so the child theme functions would be used.
- *
- * @link https://codex.wordpress.org/Theme_Development
- * @link https://codex.wordpress.org/Child_Themes
- *
- * Functions that are not pluggable (not wrapped in function_exists()) are
- * instead attached to a filter or action hook.
- *
- * For more information on hooks, actions, and filters,
- * {@link https://codex.wordpress.org/Plugin_API}
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
+/*
+Theme Name: Real Estate Theme
+Theme URI: https://christinabranson.com
+Author: Christina Brason
+Author URI: https://christinabranson.com
+Description: Wordpress theme designed for Bluffton Homes 4 Rent
+Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, blue, gray, red, white, yellow, dark, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: twentysixteen
 
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* General Settings */
 
-figure {
-max-width: 100%;
+body {
+  background: #eee;
+  font-family: 'Cantarell';
 }
 
-img.size-full {
- max-width:100%;
+a {
+  color: #E85302;
+}
+
+a:hover {
+  color:#FEBD00;
+}
+
+.button {
+  background-color: #E85302;
+}
+
+.button:hover {
+    background-color: #FEBD00;
+
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fjalla One';
+}
+
+.row {
+  max-width: 1200px;
+}
+
+
+.bigsection {
+  margin: 500px 0;
+  padding: 20px 0px;
+}
+
+section {
+  margin: 25px 0px;
+  padding: 25px 0px;
+}
+
+.white-section {
+  background: #fff;  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0px;
+  padding 0px;
+}
+
+
+/* Nav Bar Settings */
+
+.above-nav {
+  padding: 10px 0px 10px 0px;
+}
+
+.above-nav i {
+  margin-left: 20px;
+}
+
+.top-bar {
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+  font-size: 1.25em;
+  position: relative;
+}
+
+.top-bar,
+.top-bar-left,
+.top-bar-right,
+.top-bar ul {
+  background: #fff;
+  vertical-align: middle;
+}
+
+.top-bar-right {
+  margin-top: 40px;
+}
+
+.top-bar-right-bottom,
+.top-bar-right-bottom ul {
+  background: #fff;
+  vertical-align: middle;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+    display: none;
+}
+
+.top-bar-logo {
+  max-width: 200px;
+  vertical-align: middle;
+}
+
+.top-social-media-icons i {
+  display: inline-block;
+  float: left;
+  padding: 0px;
+  margin: 0px 5px;
+}
+
+.menu-text {
+  font-weight: normal;
+}
+
+
+/* Header */
+
+
+/* If front page, show large header */
+
+header {
+  margin: 0px 0px 20px 0px;
+  background: #000 url('http://blufftonhomes4rent.com/wp-content/uploads/2015/11/cropped-Front-Landscape.jpg') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  min-height: 600px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.featured-property {
+  position: relative;
+  margin-top: 20px;
+  display: block;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.featured {
+  padding: 0px;
+  font-size: 3em;
+  font-family: 'Fjalla One';
+}
+
+.featured-sub {
+  font-size: 1.25em;
+  font-family: 'Cantarell';
+}
+
+.featured-sub a {
+  color: #fff;
+}
+
+
+/* If not front page, show featured image slightly smaller */
+
+header .standard-page {}
+
+
+/* Three section panels */
+.panel {
+    margin: 5px 5px;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Footer */
+
+footer {
+  background: #fff;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+
+/* Blog Section */
+
+#blog .meta {
+  font-size: .8em;
+}
+
+#blog .meta i {
+  padding: 1px 5px 1px 10px;
+}
+
+#blog figure {
+  width: 100%;
+  background: #eee;
+  padding: 10px 10px 0px 10px;
+  margin: 0px;
+  border: 1px solid #ccc;
+}
+
+#blog figure .caption {
+  font-size: .8em;
+  font-style: italic;
+}
+
+#blog p {
+  text-indent: 10px;
+}
+
+
+/* Listing Section */
+.listing-box {
+  margin: 5px 5px;
+  padding: 0px;
+  background: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.listing-image {
+  padding: 0px;
+  background: #fff;
+  min-height: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.listing-image img {
+ max-height:100%;
+ max-width:auto;
+  height: 300px;
+  width: auto;
+}
+
+.listing-text {
+  padding: 10px;
+  background: #fff;
+}
+
+.listing-details {
+  background: rgba(0,0,0,0.2);
+    color: #fff;
+  padding: 10px;
+  font-size: 0.9em;
+  border-bottom: 1px #ccc solid;
 }
