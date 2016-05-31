@@ -4,9 +4,11 @@
  *
  * Displays all of the head element and everything up until the "site-content" div.
  *
+ * TODO: If a plugin (Amazing Carousel) is used that includes Bootstrap, there will be formatting errors!!!
+ *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Real Estate
+ * @since Real Estate
  */
 
 ?><!DOCTYPE html>
@@ -18,97 +20,80 @@
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
+
+<!-- Link Font Awesome Fonts -->
+<!-- TODO: Add in functions file!!! -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-      <li>
-        <a href="#">One</a>
-        <ul class="menu vertical">
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </div>
-
-	<div class="top-bar-right">
-<?php
-		wp_nav_menu(array(
-	    	'container' => false,
-	    	'menu' => __( 'Top Bar Menu', 'textdomain' ),
-	    	'menu_class' => 'dropdown menu',
-	    	'theme_location' => 'topbar-menu',
-	    	'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
-	    	//Recommend setting this to false, but if you need a fallback...
-	    	'fallback_cb' => 'f6_topbar_menu_fallback',
-	        'walker' => new F6_TOPBAR_MENU_WALKER(),
-		));
-?>
-	</div>
-</div>
-
-
+<!--- SITE CONTAINER -->
 <div class="container">
+	<!--- ABOVE NAVIGATION MENU FOR CONTACT & SOCIAL MEDIA -->
+	<!--- TODO: Make these fields in Customizr -->
+	<div class="row above-nav">
+		<div class="large-8 columns">
+			<i class="fa fa-phone"></i> 111-222-3333
+			<i class="fa fa-envelope-o"></i> contact@blufftonhomes4rent.com
+		</div>
+		<div class="large-4 columns text-right">
+			<a href=""><i class="fa fa-facebook"></i></a>
+			<a href=""><i class="fa fa-google-plus"></i></a>
+		</div>
+	</div>
+	<!--- TOP NAVIGATION BAR -->
+	<div class="top-bar">
+		<div class="row">
+			<div class="top-bar-left">
+				<li class="menu-text">
+					<?php
+						// TODO: Not sure why it's displaying the name and the logo
+						// check to see what foundation_the_custom_logo() returns if no logo specified
+						// TODO: Make either of these a home link
+						if(foundation_the_custom_logo()) {
+							?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php foundation_the_custom_logo(); ?></a>
+						<?php } else { ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						<?php }
+					?>
+				</li>
+      			</div>
+			<div class="top-bar-right">
+				<!---
+				TODO: Develop or implement a plugin like https://wptavern.com/how-to-add-font-awesome-icons-to-wordpress-menus to add the Font Awesome icons to the navigation bar
+				for now I'm leaving them off
+				TODO: See https://wlcdesigns.com/2015/11/foundation-6-menu-walker-class-for-wordpress/ for Walker support
+				-->
+				<?php foundation_nav_menu(); ?>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--- HEADER FOR FEATURED HOME (MAIN PAGE) -->
+	<!--- TODO: This should be customizable in Customizr, check https://github.com/WordPress/twentysixteen/blob/master/header.php for implementation -->
+	<!--- SHOW ONLY FOR HOME PAGE -->
+	<?php if ( is_front_page() && is_home() ) : ?>
+		<header class="front-page">
+			<div class="featured-property">
+				<div class="row">
+				<span class="featured">Featured Property: Westbury Park</span><br/><span class="featured-sub"><i class="fa fa-bed"></i> 3 Bedrooms | <i class="fa fa-fire-extinguisher icon-rotate-90"></i> 2 Bathrooms | <i class="fa fa-car"></i> 1 Car | <a href="">View Listing</a></span>
+				</div>
+			</div>
+		</header>
+	<?php endif; ?>
+
 	<div class="row">
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-header-main">
-				<div class="site-branding">
-					<?php foundation_the_custom_logo(); ?>
+	</div>
 
-					<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php endif;
 
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; ?></p>
-					<?php endif; ?>
-				</div><!-- .site-branding -->
 
-				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'foundation' ); ?></button>
-
-					<div id="site-header-menu" class="site-header-menu">
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'foundation' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'primary',
-										'menu_class'     => 'primary-menu',
-									 ) );
-								?>
-							</nav><!-- .main-navigation -->
-						<?php endif; ?>
-
-						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'foundation' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'social',
-										'menu_class'     => 'social-links-menu',
-										'depth'          => 1,
-										'link_before'    => '<span class="screen-reader-text">',
-										'link_after'     => '</span>',
-									) );
-								?>
-							</nav><!-- .social-navigation -->
-						<?php endif; ?>
-					</div><!-- .site-header-menu -->
-				<?php endif; ?>
-			</div><!-- .site-header-main -->
-
+<div style="display:none;">
 			<?php if ( get_header_image() ) : ?>
 				<?php
 					/**
@@ -128,6 +113,4 @@
 					</a>
 				</div><!-- .header-image -->
 			<?php endif; // End header image check. ?>
-		</header><!-- .site-header -->
-
-		<div id="content" class="site-content">
+</div>

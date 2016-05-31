@@ -2,23 +2,6 @@
 /**
  * Twenty Sixteen functions and definitions
  *
- * Set up the theme and provides some helper functions, which are used in the
- * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
- *
- * When using a child theme you can override certain functions (those wrapped
- * in a function_exists() call) by defining them first in your child theme's
- * functions.php file. The child theme's functions.php file is included before
- * the parent theme's file, so the child theme functions would be used.
- *
- * @link https://codex.wordpress.org/Theme_Development
- * @link https://codex.wordpress.org/Child_Themes
- *
- * Functions that are not pluggable (not wrapped in function_exists()) are
- * instead attached to a filter or action hook.
- *
- * For more information on hooks, actions, and filters,
- * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
@@ -42,17 +25,9 @@ if ( ! function_exists( 'foundation_setup' ) ) :
  *
  * Create your own foundation_setup() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since 
  */
 function foundation_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Twenty Sixteen, use a find and replace
-	 * to change 'foundation' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'foundation', get_template_directory() . '/languages' );
-
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -69,6 +44,7 @@ function foundation_setup() {
 	 *
 	 *  @since Twenty Sixteen 1.2
 	 */
+//TODO: Change this to fit theme. I think this is 200 width
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
 		'width'       => 240,
@@ -80,19 +56,24 @@ function foundation_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
+// TODO: Need this for showing the first three images for blog posts I think
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
 
+// TODO: Determine how many navigation menus we need
+// Definitely one for the top navigation menu
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'foundation' ),
 		'social'  => __( 'Social Links Menu', 'foundation' ),
+		'topbar-menu', __( 'Top Bar Menu','foundation' ),
 	) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
+// Dunno yet
 	add_theme_support( 'html5', array(
 		'search-form',
 		'comment-form',
@@ -131,23 +112,24 @@ endif; // foundation_setup
 add_action( 'after_setup_theme', 'foundation_setup' );
 
 
-function _register_menu() {
-	register_nav_menu( 'topbar-menu', __( 'Top Bar Menu','textdomain' ) );
+/* NAVIGATION MENU FOR FOUNDATION */
+function foundation_nav_menu() {
+
+					wp_nav_menu(array(
+	    				'container' => false,
+	    				'menu' => __( 'Top Bar Menu', 'foundation' ),
+	    				'menu_class' => 'dropdown menu',
+	    				'theme_location' => 'topbar-menu',
+	    				'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+	    				//Recommend setting this to false, but if you need a fallback...
+	    				'fallback_cb' => 'f6_topbar_menu_fallback',
+	        			'walker' => new F6_TOPBAR_MENU_WALKER(),
+					));
+
 }
- 
-//Add Menu to theme setup hook
-add_action( 'after_setup_theme', '_theme_setup' );
- 
-function _theme_setup()
-{
-	add_action( 'init', '_register_menu' );
-		
-	//Theme Support
-	add_theme_support( 'menus' );
-}
-
-
-
+	/*
+	 * Walker function to allow for top menu with Foundation 6
+	 */
 class F6_TOPBAR_MENU_WALKER extends Walker_Nav_Menu
 {   
 	/*
@@ -176,12 +158,6 @@ function f6_topbar_menu_fallback($args)
 }
 
 
-
-
-
-
-
-
 /**
  * Sets the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -190,6 +166,7 @@ function f6_topbar_menu_fallback($args)
  * @global int $content_width
  *
  * @since Twenty Sixteen 1.0
+// TODO: Don't know if I need or want this
  */
 function foundation_content_width() {
 	//$GLOBALS['content_width'] = apply_filters( 'foundation_content_width', 840 );
@@ -203,6 +180,7 @@ add_action( 'after_setup_theme', 'foundation_content_width', 0 );
  *
  * @since Twenty Sixteen 1.0
  */
+// TODO: Need to determine where/what I want here
 function foundation_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'foundation' ),
@@ -210,8 +188,8 @@ function foundation_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'foundation' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -220,8 +198,8 @@ function foundation_widgets_init() {
 		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'foundation' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -230,15 +208,15 @@ function foundation_widgets_init() {
 		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'foundation' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'foundation_widgets_init' );
 
 if ( ! function_exists( 'foundation_fonts_url' ) ) :
 /**
- * Register Google fonts for Twenty Sixteen.
+ * Register Google fonts for theme.
  *
  * Create your own foundation_fonts_url() function to override in a child theme.
  *
@@ -251,19 +229,12 @@ function foundation_fonts_url() {
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
 
-	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'foundation' ) ) {
-		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
+	if ( 'off' !== _x( 'on', 'Cantarell font: on or off', 'foundation' ) ) {
+		$fonts[] = 'Cantarell:400,700,400italic,700italic';
 	}
 
-	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'foundation' ) ) {
-		$fonts[] = 'Montserrat:400,700';
-	}
-
-	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'foundation' ) ) {
-		$fonts[] = 'Inconsolata:400';
+	if ( 'off' !== _x( 'on', 'Fjalla+One font: on or off', 'foundation' ) ) {
+		$fonts[] = 'Fjalla+One';
 	}
 
 	if ( $fonts ) {
@@ -296,7 +267,6 @@ add_action( 'wp_head', 'foundation_javascript_detection', 0 );
  */
 function foundation_scripts() {
 
-wp_enqueue_style( 'custom', get_stylesheet_uri() );
 
 	/* Add Foundation CSS */
 	wp_enqueue_style( 'foundation-normalize', get_stylesheet_directory_uri() . '/foundation/css/normalize.css' );
@@ -308,7 +278,11 @@ wp_enqueue_style( 'custom', get_stylesheet_uri() );
 	/* Foundation Init JS */
 	wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation.js', array( 'jquery' ), '1', true );
 
+	/* Add our fonts */
+	wp_enqueue_style( 'foundation_fonts', foundation_fonts_url(), array(), null );
 
+	/* Add our stylesheet */
+	wp_enqueue_style( 'custom', get_stylesheet_uri() );
 
 }
 add_action( 'wp_enqueue_scripts', 'foundation_scripts' );
