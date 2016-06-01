@@ -13,7 +13,11 @@ This theme is based on a design located: http://s.codepen.io/christinabranson/de
 
 body {
   background: #eee;
-  font-family: 'Cantarell';
+  font-family: 'Cantarell', sans-serif;
+}
+
+.row, .columns {
+  font-family: 'Cantarell', sans-serif;
 }
 
 a {
