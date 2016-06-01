@@ -103,7 +103,7 @@ function foundation_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'css/editor-style.css', foundation_fonts_url() ) );
+	//add_editor_style( array( 'css/editor-style.css', foundation_fonts_url() ) );
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -245,39 +245,6 @@ function foundation_widgets_init() {
 }
 add_action( 'widgets_init', 'foundation_widgets_init' );
 
-if ( ! function_exists( 'foundation_fonts_url' ) ) :
-/**
- * Register Google fonts for theme.
- *
- * Create your own foundation_fonts_url() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- *
- * @return string Google fonts URL for the theme.
- */
-function foundation_fonts_url() {
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
-
-	if ( 'off' !== _x( 'on', 'Cantarell font: on or off', 'foundation' ) ) {
-		$fonts[] = 'Cantarell:400,700,400italic,700italic';
-	}
-
-	if ( 'off' !== _x( 'on', 'Fjalla+One font: on or off', 'foundation' ) ) {
-		$fonts[] = 'Fjalla+One';
-	}
-
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' => urlencode( implode( '|', $fonts ) ),
-			'subset' => urlencode( $subsets ),
-		), 'https://fonts.googleapis.com/css' );
-	}
-
-	return $fonts_url;
-}
-endif;
 
 /**
  * Handles JavaScript detection.
@@ -298,6 +265,15 @@ add_action( 'wp_head', 'foundation_javascript_detection', 0 );
  */
 function foundation_scripts() {
 
+	/* Add our fonts */
+	// <link href='https://fonts.googleapis.com/css?family=Cantarell:400,400italic,700,700italic|Fjalla+One' rel='stylesheet' type='text/css'>
+        wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Cantarell:400,400italic,700,700italic|Fjalla+One');
+        wp_enqueue_style( 'googleFonts');
+
+	// Add Font Awesome
+	// https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
+        wp_register_style('fontAwesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+        wp_enqueue_style( 'fontAwesome');
 
 	/* Add Foundation CSS */
 	wp_enqueue_style( 'foundation-normalize', get_stylesheet_directory_uri() . '/foundation/css/normalize.css' );
@@ -308,9 +284,6 @@ function foundation_scripts() {
 	wp_enqueue_script( 'foundation-modernizr-js', get_template_directory_uri() . '/foundation/js/vendor/modernizr.js', array( 'jquery' ), '1', true );
 	/* Foundation Init JS */
 	wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation.js', array( 'jquery' ), '1', true );
-
-	/* Add our fonts */
-	wp_enqueue_style( 'foundation_fonts', foundation_fonts_url(), array(), null );
 
 	/* Add our stylesheet */
 	wp_enqueue_style( 'custom', get_stylesheet_uri() );

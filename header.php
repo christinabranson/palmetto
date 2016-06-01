@@ -21,10 +21,6 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
 
-<!-- Link Font Awesome Fonts -->
-<!-- TODO: Add in functions file!!! -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-
 	<?php wp_head(); ?>
 </head>
 
