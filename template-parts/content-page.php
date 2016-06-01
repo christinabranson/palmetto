@@ -25,6 +25,7 @@
 		<div class="row">
 			<div class="large-8 columns">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<?php foundation_meta_edit(); ?>
 				<?php foundation_post_thumbnail(); ?>
 				<div class="entry-content">
 					<?php
@@ -39,19 +40,6 @@
 						) );
 					?>
 				</div><!-- .entry-content -->
-
-					<?php
-						edit_post_link(
-							sprintf(
-								/* translators: %s: Name of current post */
-								__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'foundation' ),
-								get_the_title()
-							),
-							'<footer class="entry-footer"><span class="edit-link">',
-							'</span></footer><!-- .entry-footer -->'
-						);
-					?>
-
 
 			</div>
 			<div class="large-4 columns">

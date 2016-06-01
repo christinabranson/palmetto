@@ -3,3 +3,11 @@ Real Estate Theme is a Wordpress theme specifically created for a real estate ag
 
 Featured:
 - Custom front page to show off 
+
+
+
+Customizer Options
+- Header
+- - Input phone #, email, social media links
+- - Front page header image
+- - Front page header text

@@ -9,6 +9,48 @@
  * @since Twenty Sixteen 1.0
  */
 
+function foundation_entry_meta() {
+	echo '<div class="meta">';
+	foundation_meta_get_author();
+	foundation_meta_get_postdate();
+	foundation_meta_get_categories();
+
+	foundation_meta_edit();
+
+	echo '</div>';
+}
+
+function foundation_meta_get_author() {
+	printf(
+		'<i class="fa fa-user"></i> <a href="%1s" rel="author">%2s</a>',
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		get_the_author()
+		);
+}
+
+function foundation_meta_get_postdate() {
+	printf(
+		'<i class="fa fa-calendar"></i> <a href="%1s" rel="author">%2s</a>',
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		get_the_date()
+		);
+}
+
+function foundation_meta_get_categories() {
+	$category_list = get_the_category_list( ', ' );
+	if ( $category_list ) {
+		echo '<i class="fa fa-folder-o"></i> '. $category_list;
+	}
+}
+
+function foundation_meta_edit() {
+	// post edit link
+	if ( is_user_logged_in() ) {
+		echo '<i class="fa fa-pencil"></i> ';
+		edit_post_link( __( 'Edit', 'unconditional' ), '<span class="meta-edit">', '</span>' );
+	}
+}
+
 if ( ! function_exists( 'foundation_entry_meta' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags.
@@ -19,16 +61,14 @@ if ( ! function_exists( 'foundation_entry_meta' ) ) :
  */
 
 /*
-
 <div class="meta"><i class="fa fa-pencil"></i><a href="#">Christina Branson</a> <i class="fa fa-calendar"></i> May 22, 2016 <i class="fa fa-folder-open-o"></i> <a href="">News</a>, <a href="">Personal</a></div>
-
 */
+
 function foundation_entry_meta() {
 	if ( 'post' === get_post_type() ) {
-		$author_avatar_size = apply_filters( 'foundation_author_avatar_size', 49 );
-		printf( '<div class="meta">  %1$s   %2$s <a class="url fn n" href="%3$s">  %4$s  </a>',
-			get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
-			_x( 'Author', 'Used before post author name.', 'foundation' ),
+		$author_avatar_size = apply_filters( 'foundation_author_avatar_size', 28 );
+		printf( '<div class="meta">  %1$s <a class="url fn n" href="%2$s">  %3$s  </a>',
+			_x( '<i class="fa fa-pencil"></i> ', 'Used before post author name.', 'foundation' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			get_the_author()
 		);
