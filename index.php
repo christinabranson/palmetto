@@ -10,24 +10,22 @@
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Real Estate
+ * @since Real Estate 0.1
  */
 
 get_header(); ?>
 
-<p>index.php</p>
-
 <div class="row">
-	<div class="large-10 columns">
+	<div class="large-8 columns">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
+				<!--- <header> -->
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+				<!--- </header> -->
 			<?php endif; ?>
 
 			<?php
@@ -61,7 +59,7 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-<div class="large-2 columns">
+<div class="large-4 columns sidebar">
 <?php get_sidebar(); ?>
 </div>
 </div>

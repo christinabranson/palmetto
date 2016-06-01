@@ -6,11 +6,9 @@
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */
-
 if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) ) {
 	return;
 }
-
 // If we get this far, we have widgets. Let's do this.
 ?>
 <aside id="content-bottom-widgets" class="content-bottom-widgets" role="complementary">

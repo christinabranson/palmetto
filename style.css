@@ -5,14 +5,9 @@ Theme URI: https://christinabranson.com
 Author: Christina Brason
 Author URI: https://christinabranson.com
 Description: Wordpress theme designed for Bluffton Homes 4 Rent
-Version: 1.2
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, blue, gray, red, white, yellow, dark, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
-Text Domain: twentysixteen
+Version: 0.1
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+This theme is based on a design located: http://s.codepen.io/christinabranson/debug/QEWaVy
 */
 /* General Settings */
 
@@ -263,4 +258,12 @@ footer {
   padding: 10px;
   font-size: 0.9em;
   border-bottom: 1px #ccc solid;
+}
+
+
+/* Sidebars */
+
+.sidebar section {
+	margin: 10px 0px;
+	padding: 10px 0px;
 }

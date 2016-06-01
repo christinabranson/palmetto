@@ -17,10 +17,16 @@ if ( ! function_exists( 'foundation_entry_meta' ) ) :
  *
  * @since Twenty Sixteen 1.0
  */
+
+/*
+
+<div class="meta"><i class="fa fa-pencil"></i><a href="#">Christina Branson</a> <i class="fa fa-calendar"></i> May 22, 2016 <i class="fa fa-folder-open-o"></i> <a href="">News</a>, <a href="">Personal</a></div>
+
+*/
 function foundation_entry_meta() {
 	if ( 'post' === get_post_type() ) {
 		$author_avatar_size = apply_filters( 'foundation_author_avatar_size', 49 );
-		printf( '<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
+		printf( '<div class="meta">  %1$s   %2$s <a class="url fn n" href="%3$s">  %4$s  </a>',
 			get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
 			_x( 'Author', 'Used before post author name.', 'foundation' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -34,7 +40,7 @@ function foundation_entry_meta() {
 
 	$format = get_post_format();
 	if ( current_theme_supports( 'post-formats', $format ) ) {
-		printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
+		printf( '| %1$s<a href="%2$s">%3$s</a> |',
 			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'foundation' ) ),
 			esc_url( get_post_format_link( $format ) ),
 			get_post_format_string( $format )

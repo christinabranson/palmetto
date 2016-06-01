@@ -211,6 +211,37 @@ function foundation_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Sidebar - Blog', 'foundation' ),
+		'id'            => 'sidebar-blog',
+		'description'   => __( 'Appears on the sidebar for Blog posts', 'foundation' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Sidebar - Page', 'foundation' ),
+		'id'            => 'sidebar-page',
+		'description'   => __( 'Appears on the sidebar for Page pages', 'foundation' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Sidebar - Listing', 'foundation' ),
+		'id'            => 'sidebar-listing',
+		'description'   => __( 'Appears on the sidebar for Listing pages', 'foundation' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
 }
 add_action( 'widgets_init', 'foundation_widgets_init' );
 

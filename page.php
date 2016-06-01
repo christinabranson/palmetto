@@ -7,43 +7,41 @@
  * other "pages" on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Real Estate
+ * @since Real Estate 0.1
  */
 
 get_header(); ?>
+<div class="row"></div>
+	<!--- <div class="large-8 columns"> -->
+		<main id="main" class="site-main" role="main">
+			<?php
+			// Start the loop.
+				while ( have_posts() ) : the_post();
 
-<p>page.php</p>
+				// Include the page content template.
+				get_template_part( 'template-parts/content', 'page' );
 
-<div class="row">
-<div class="large-10 columns">
-	<main id="main" class="site-main" role="main">
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
-
-			// Include the page content template.
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) {
+					comments_template();
+				}
 
 			// End of the loop.
-		endwhile;
-		?>
+				endwhile;
+			?>
 
-	</main><!-- .site-main -->
+		</main><!-- .site-main -->
 
-	<?php get_sidebar( 'content-bottom' ); ?>
+		<!--- TODO: Figure out what this is -->
+		<?php //get_sidebar( 'content-bottom' ); ?>
 
+	<!--- </div> -->
 
-<p>/page.php</p>
-
-</div><!-- .content-area -->
-
-<div class="large-2 columns">
-<?php get_sidebar(); ?>
+	<!--- TODO: Do I really want a sidebar here? -->
+	<!--- <div class="large-4 columns"> -->
+	<!---	<?php //get_sidebar(); ?> -->
+	<!--- </div> -->
 </div>
+
 <?php get_footer(); ?>

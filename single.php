@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+<h2>single.php</h2>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<?php
