@@ -21,7 +21,23 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
 
+
 	<?php wp_head(); ?>
+
+
+<?php
+  $content_text_color = get_option('content_text_color');
+  $content_link_color = get_option('content_link_color');
+
+?>
+<style>
+  body { background: <?php echo get_option('body_background_color'); ?> ; color:  <?php echo get_option('body_text_color'); ?>; }
+  body a { color:  <?php echo $body_link_color; ?>; }
+  body .button { background-color:  <?php echo $body_link_color; ?>; }
+  body a:hover { color:  <?php echo $body_link_hover_color; ?>; }
+  body .button:hover { background-color:  <?php echo $body_link_hover_color; ?>; }
+</style>
+
 </head>
 
 <body <?php body_class(); ?>>
