@@ -16,6 +16,109 @@
 
 get_header(); ?>
 
+<div class="row" id="featured_panels" data-equalizer>
+<!---- Three Pane Feature Functionality ---->
+<?php
+	$number_of_panes = get_theme_mod( 'number_of_panes', '' );
+
+	$pane_header_1 = get_theme_mod( 'pane_header_1', '' );	
+	$pane_header_2 = get_theme_mod( 'pane_header_2', '' );
+	$pane_header_3 = get_theme_mod( 'pane_header_3', '' );
+	$pane_header_4 = get_theme_mod( 'pane_header_4', '' );
+
+
+	$pane_icon_1 = get_theme_mod( 'pane_icon_1', '' );	
+	$pane_icon_2 = get_theme_mod( 'pane_icon_2', '' );
+	$pane_icon_3 = get_theme_mod( 'pane_icon_3', '' );
+	$pane_icon_4 = get_theme_mod( 'pane_icon_4', '' );
+
+
+	$pane_text_1 = get_theme_mod( 'pane_text_1', '' );	
+	$pane_text_2 = get_theme_mod( 'pane_text_2', '' );
+	$pane_text_3 = get_theme_mod( 'pane_text_3', '' );
+	$pane_text_4 = get_theme_mod( 'pane_text_4', '' );
+
+	if ($number_of_panes !== 0) {
+		if ($number_of_panes == 1) { ?>
+			<div class="large-8 columns large-offset-2">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_1; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_1; ?></h2>
+					<p><?php echo $pane_text_1; ?></p>
+				</div>
+			</div>
+		<?php } elseif ($number_of_panes == 2) { ?>
+			<div class="large-6 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_1; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_1; ?></h2>
+					<p><?php echo $pane_text_1; ?></p>
+				</div>
+			</div>
+			<div class="large-6 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_2; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_2; ?></h2>
+					<p><?php echo $pane_text_2; ?></p>
+				</div>
+			</div>
+		<?php } elseif ($number_of_panes == 3) { ?>
+			<div class="large-4 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_1; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_1; ?></h2>
+					<p><?php echo $pane_text_1; ?></p>
+				</div>
+			</div>
+			<div class="large-4 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_2; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_2; ?></h2>
+					<p><?php echo $pane_text_2; ?></p>
+				</div>
+			</div>
+			<div class="large-4 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_3; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_3; ?></h2>
+					<p><?php echo $pane_text_3; ?></p>
+				</div>
+			</div>
+		<?php } elseif ($number_of_panes == 4) { ?>
+			<div class="large-3 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_1; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_1; ?></h2>
+					<p><?php echo $pane_text_1; ?></p>
+				</div>
+			</div>
+			<div class="large-3 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_2; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_2; ?></h2>
+					<p><?php echo $pane_text_2; ?></p>
+				</div>
+			</div>
+			<div class="large-3 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_3; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_3; ?></h2>
+					<p><?php echo $pane_text_3; ?></p>
+				</div>
+			</div>
+			<div class="large-3 columns">
+        			<div class="panel" data-equalizer-watch>
+					<h2 class="text-center"><i class="fa fa-<?php echo $pane_icon_4; ?>"></i></h2>
+					<h2 class="text-center"><?php echo $pane_header_4; ?></h2>
+					<p><?php echo $pane_text_4; ?></p>
+				</div>
+			</div>
+		<?php }
+	}
+
+?>
+</div>
+
 <div class="row">
 	<div class="large-8 columns" id="blog">
 		<?php if ( have_posts() ) : ?>

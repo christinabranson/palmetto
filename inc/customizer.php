@@ -191,7 +191,7 @@ $wp_customize->add_section('three_pane' , array(
   'title' => __('Three Pane Featured','foundation'),
 ));
 
-$wp_customize->add_setting('number_of_panes', array('default' => 'value5'));
+$wp_customize->add_setting('number_of_panes', array('default' => '3'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -203,17 +203,17 @@ $wp_customize->add_control(
             'settings'       => 'number_of_panes',
 		'type'       => 'radio',
 		'choices'    => array(
-            		'value1' => '0',
-            		'value2' => '1',
-            		'value3' => '2',
-            		'value4' => '3',
-            		'value5' => '4',
+            		'0' => '0',
+            		'1' => '1',
+            		'2' => '2',
+            		'3' => '3',
+            		'4' => '4',
         	),
             )
         )
     );
 
-$wp_customize->add_setting('pane_header_1', array('default' => ''));
+$wp_customize->add_setting('pane_header_1', array('default' => 'Panel Header 1'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -229,7 +229,7 @@ $wp_customize->add_control(
     );
 
 
-$wp_customize->add_setting('pane_icon_1', array('default' => ''));
+$wp_customize->add_setting('pane_icon_1', array('default' => 'fa-home'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -244,7 +244,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_text_1', array('default' => ''));
+$wp_customize->add_setting('pane_text_1', array('default' => 'Text text text'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -259,7 +259,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_header_2', array('default' => ''));
+$wp_customize->add_setting('pane_header_2', array('default' => 'Panel Header 2'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -274,7 +274,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_icon_2', array('default' => ''));
+$wp_customize->add_setting('pane_icon_2', array('default' => 'fa-home'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -289,7 +289,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_text_2', array('default' => ''));
+$wp_customize->add_setting('pane_text_2', array('default' => 'Text text text'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -305,7 +305,7 @@ $wp_customize->add_control(
     );
 
 
-$wp_customize->add_setting('pane_header_3', array('default' => ''));
+$wp_customize->add_setting('pane_header_3', array('default' => 'Panel Header 3'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -320,7 +320,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_icon_3', array('default' => ''));
+$wp_customize->add_setting('pane_icon_3', array('default' => 'fa-home'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -335,7 +335,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_text_3', array('default' => ''));
+$wp_customize->add_setting('pane_text_3', array('default' => 'Text Text Text'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -351,7 +351,7 @@ $wp_customize->add_control(
     );
 
 
-$wp_customize->add_setting('pane_header_4', array('default' => ''));
+$wp_customize->add_setting('pane_header_4', array('default' => 'Header Panel 4'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -366,7 +366,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_icon_4', array('default' => ''));
+$wp_customize->add_setting('pane_icon_4', array('default' => 'fa-home'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -381,7 +381,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_text_4', array('default' => ''));
+$wp_customize->add_setting('pane_text_4', array('default' => 'Text text text'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
