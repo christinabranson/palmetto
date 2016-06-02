@@ -6,66 +6,10 @@
  */
 
 
-/*
-	Register our customizer options
-*/
 function foundation_customize_register( $wp_customize ) {
 
-	/*
-		Settings for the three pane descriptions
-	*/
-	$wp_customize->add_section( 'foundation_highlight_panel' , array(
-    		'title'      => __( 'Three Pane Panel', 'foundation' ),
-    		'priority'   => 30,
-	) );
-
-	$wp_customize->add_setting( 'header_panel_1' , array(
-    		'default'     => 'Text #1',
-    		'transport'   => 'refresh',
-	) );
-
-	$wp_customize->add_setting( 'header_panel_2' , array(
-    		'default'     => 'Text #2',
-    		'transport'   => 'refresh',
-	) );
-
-	$wp_customize->add_setting( 'header_panel_3' , array(
-    		'default'     => 'Text #3',
-    		'transport'   => 'refresh',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'        => __( 'Header Color', 'foundation' ),
-		'section'    => 'foundation_highlight_panel',
-		'settings'   => 'header_panel_1',
-	) ) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'        => __( 'Header Color', 'foundation' ),
-		'section'    => 'foundation_highlight_panel',
-		'settings'   => 'header_panel_2',
-	) ) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'        => __( 'Header Color', 'foundation' ),
-		'section'    => 'foundation_highlight_panel',
-		'settings'   => 'header_panel_3',
-	) ) );
-
-
-
-	/*
-		Featured Property Setting
-	*/
-	$wp_customize->add_section( 'foundation_featured_property' , array(
-    		'title'      => __( 'Featured Properties', 'foundation' ),
-    		'priority'   => 30,
-	) );
-
-
-
-/********************************************************
-Color Settings
+/*
+	Color Settings
 */
 
 	$colors = array();
@@ -109,7 +53,7 @@ $colors[] = array(
     			'settings' => $color['slug'])
     		)
 		);
-
+	}
 
 /*
 	Contact Header
@@ -240,14 +184,221 @@ $wp_customize->add_control(
     );
 
 
+/*
+	Index Three Pane
+*/
+$wp_customize->add_section('three_pane' , array(
+  'title' => __('Three Pane Featured','foundation'),
+));
+
+$wp_customize->add_setting('number_of_panes', array('default' => 'value5'));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'number_of_panes',
+        array(
+            'label'          => __( 'Number Of Feature Panes', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'number_of_panes',
+		'type'       => 'radio',
+		'choices'    => array(
+            		'value1' => '0',
+            		'value2' => '1',
+            		'value3' => '2',
+            		'value4' => '3',
+            		'value5' => '4',
+        	),
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_header_1', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_header_1',
+        array(
+            'label'          => __( '#1 Pane Header', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_header_1',
+            'type'           => 'text'
+            )
+        )
+    );
+
+
+$wp_customize->add_setting('pane_icon_1', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_icon_1',
+        array(
+            'label'          => __( '#1 Pane Icon', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_icon_1',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_text_1', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_text_1',
+        array(
+            'label'          => __( '#1 Pane Text', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_text_1',
+            'type'           => 'textarea'
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_header_2', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_header_2',
+        array(
+            'label'          => __( '#2 Pane Header', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_header_2',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_icon_2', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_icon_2',
+        array(
+            'label'          => __( '#2 Pane Icon', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_icon_2',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_text_2', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_text_2',
+        array(
+            'label'          => __( '#2 Pane Text', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_text_2',
+            'type'           => 'textarea'
+            )
+        )
+    );
+
+
+$wp_customize->add_setting('pane_header_3', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_header_3',
+        array(
+            'label'          => __( '#3 Pane Header', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_header_3',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_icon_3', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_icon_3',
+        array(
+            'label'          => __( '#3 Pane Icon', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_icon_3',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_text_3', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_text_3',
+        array(
+            'label'          => __( '#3 Pane Text', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_text_3',
+            'type'           => 'textarea'
+            )
+        )
+    );
+
+
+$wp_customize->add_setting('pane_header_4', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_header_4',
+        array(
+            'label'          => __( '#4 Pane Header', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_header_4',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_icon_4', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_icon_4',
+        array(
+            'label'          => __( '#4 Pane Icon', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_icon_4',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('pane_text_4', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'pane_text_4',
+        array(
+            'label'          => __( '#4 Pane Text', 'foundation' ),
+            'section'        => 'three_pane',
+            'settings'       => 'pane_text_4',
+            'type'           => 'textarea'
+            )
+        )
+    );
 
 
 
 
 
-
-
-
-
-}}
+}
 add_action( 'customize_register', 'foundation_customize_register' );
