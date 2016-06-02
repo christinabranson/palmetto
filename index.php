@@ -17,15 +17,11 @@
 get_header(); ?>
 
 <div class="row">
-	<div class="large-8 columns">
-		<main id="main" class="site-main" role="main">
-
+	<div class="large-8 columns" id="blog">
 		<?php if ( have_posts() ) : ?>
 
 			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<!--- <header> -->
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				<!--- </header> -->
 			<?php endif; ?>
 
 			<?php
@@ -56,11 +52,10 @@ get_header(); ?>
 		endif;
 		?>
 
-		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-<div class="large-4 columns sidebar">
-<?php get_sidebar(); ?>
-</div>
+	<div class="large-4 columns sidebar">
+		<?php get_sidebar(); ?>
+	</div>
 </div>
 <?php get_footer(); ?>
