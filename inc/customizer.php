@@ -65,8 +65,10 @@ function foundation_customize_register( $wp_customize ) {
 	) );
 
 
+
+/********************************************************
 Color Settings
-/*********************************************************/
+*/
 
 $colors = array();
 $colors[] = array(
