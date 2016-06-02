@@ -24,18 +24,12 @@
 
 	<?php wp_head(); ?>
 
-
-<?php
-  $content_text_color = get_option('content_text_color');
-  $content_link_color = get_option('content_link_color');
-
-?>
 <style>
   body { background: <?php echo get_option('body_background_color'); ?> ; color:  <?php echo get_option('body_text_color'); ?>; }
-  body a { color:  <?php echo $body_link_color; ?>; }
-  body .button { background-color:  <?php echo $body_link_color; ?>; }
-  body a:hover { color:  <?php echo $body_link_hover_color; ?>; }
-  body .button:hover { background-color:  <?php echo $body_link_hover_color; ?>; }
+  body a { color:  <?php echo get_option('body_link_color'); ?>; }
+  body .button { background-color:  <?php echo get_option('body_link_color'); ?>; }
+  body a:hover { color:  <?php echo get_option('body_link_hover_color'); ?>; }
+  body .button:hover { background-color:  <?php echo get_option('body_link_hover_color'); ?>; }
 </style>
 
 </head>
@@ -45,15 +39,61 @@
 <!--- SITE CONTAINER -->
 <div class="container">
 	<!--- ABOVE NAVIGATION MENU FOR CONTACT & SOCIAL MEDIA -->
-	<!--- TODO: Make these fields in Customizr -->
 	<div class="row above-nav">
+		<!--- CONTACT HEADER -->
 		<div class="large-8 columns">
-			<i class="fa fa-phone"></i> 111-222-3333
-			<i class="fa fa-envelope-o"></i> contact@blufftonhomes4rent.com
+			<!--- PHONE NUMBER -->
+			<?php
+				$phone = get_theme_mod( 'phone_number', '' );
+				if ($phone) { ?>
+					<i class="fa fa-phone"></i> <?php echo $phone; ?>
+			<?php } ?>
+			<!--- EMAIL ADDRESS -->
+			<?php
+				$email = get_theme_mod( 'email_address', '' );
+				if ($email) { ?>
+					<i class="fa fa-envelope-o"></i> <?php echo $email; ?>
+			<?php } ?>
 		</div>
+		<!--- SOCIAL MEDIA OPTIONS -->
 		<div class="large-4 columns text-right">
-			<a href=""><i class="fa fa-facebook"></i></a>
-			<a href=""><i class="fa fa-google-plus"></i></a>
+			<!--- FACEBOOK -->
+			<?php
+				$facebook_url = get_theme_mod( 'facebook_url', '' );
+				if ($facebook_url) { ?>
+					<a href="<?php echo $facebook_url; ?>"><i class="fa fa-facebook"></i></a>
+			<?php } ?>
+			<!--- TWITTER -->
+			<?php
+				$twitter_url = get_theme_mod( 'twitter_url', '' );
+				if ($twitter_url) { ?>
+					<a href="<?php echo $twitter_url; ?>"><i class="fa fa-twitter"></i></a>
+			<?php } ?>
+			<!--- GOOGLE+ -->
+			<?php
+				$google_url = get_theme_mod( 'google_url', '' );
+				if ($google_url) { ?>
+					<a href="<?php echo $google_url; ?>"><i class="fa fa-google-plus"></i></a>
+			<?php } ?>
+			<!--- LINKEDIN -->
+			<?php
+				$linkedin_url = get_theme_mod( 'linkedin_url', '' );
+				if ($linkedin_url) { ?>
+					<a href="<?php echo $linkedin_url; ?>"><i class="fa fa-linkedin"></i></a>
+			<?php } ?>
+			<!--- INSTAGRAM -->
+			<?php
+				$instagram_url = get_theme_mod( 'instagram_url', '' );
+				if ($instagram_url) { ?>
+					<a href="<?php echo $instagram_url; ?>"><i class="fa fa-instagram"></i></a>
+			<?php } ?>
+			<!--- GITHUB -->
+			<?php
+				$github_url = get_theme_mod( 'github_url', '' );
+				if ($github_url) { ?>
+					<a href="<?php echo $github_url; ?>"><i class="fa fa-github"></i></a>
+			<?php } ?>
+
 		</div>
 	</div>
 	<!--- TOP NAVIGATION BAR -->
