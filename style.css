@@ -8,6 +8,14 @@ Description: Wordpress theme designed for Bluffton Homes 4 Rent
 Version: 0.1
 
 This theme is based on a design located: http://s.codepen.io/christinabranson/debug/QEWaVy
+
+Schemas to implement:
+http://schema.org/PostalAddress
+http://schema.org/SingleFamilyResidence
+http://schema.org/Place
+http://schema.org/Offer
+
+
 */
 /* General Settings */
 
@@ -213,6 +221,10 @@ footer {
   padding: 1px 5px 1px 10px;
 }
 
+#blog {
+overflow:hidden;
+}
+
 #blog figure {
   width: 100%;
   background: #eee;
@@ -274,4 +286,28 @@ footer {
 .sidebar section {
 	margin: 10px 0px;
 	padding: 10px 0px;
+}
+
+/* Listings */
+#listing h2 {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #000;
+}
+
+#listing .orbit {
+	min-height: 400px;
+	max-height: 400px;
+}
+
+#listing .orbit li {
+	min-height: 400px;
+	max-height: 400px;
+}
+
+
+
+/* Etc */
+.icon-rotate-90 {
+  transform: rotate(270deg);
 }

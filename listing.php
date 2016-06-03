@@ -13,8 +13,12 @@
  * @since Real Estate 0.1
  */
 
-get_header(); ?>
-<div class="row"></div>
+get_header();
+
+
+
+ ?>
+
 	<!--- <div class="large-8 columns"> -->
 		<main id="main" class="site-main" role="main">
 			<?php
@@ -22,7 +26,9 @@ get_header(); ?>
 				while ( have_posts() ) : the_post();
 
 				// Include the page content template.
-				get_template_part( 'template-parts/content', 'page' );
+				get_template_part( 'template-parts/content', 'listing' );
+				
+
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) {
