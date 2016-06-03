@@ -8,6 +8,9 @@
  * @since Twenty Sixteen 1.0
  */
 
+
+
+
 /**
  * Twenty Sixteen only works in WordPress 4.4 or later.
  */
@@ -49,6 +52,7 @@ function foundation_setup() {
 		'height'      => 240,
 		'width'       => 240,
 		'flex-height' => true,
+			'header-text' => array( '', '' ),
 	) );
 
 	/*
@@ -119,7 +123,7 @@ function foundation_nav_menu() {
 	    				'container' => false,
 	    				'menu' => __( 'Top Bar Menu', 'foundation' ),
 	    				'menu_class' => 'dropdown menu',
-	    				'theme_location' => 'topbar-menu',
+	    				//'theme_location' => 'topbar-menu',
 	    				'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
 	    				//Recommend setting this to false, but if you need a fallback...
 	    				'fallback_cb' => 'f6_topbar_menu_fallback',
