@@ -213,7 +213,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_header_1', array('default' => 'Panel Header 1'));
+$wp_customize->add_setting('pane_header_1', array('default' => 'Our Homes'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -244,7 +244,7 @@ $wp_customize->add_control(
         )
     );
 
-$wp_customize->add_setting('pane_text_1', array('default' => 'Text text text'));
+$wp_customize->add_setting('pane_text_1', array('default' => 'We are a small family-owned company. We own all of the homes we offer for rent.'));
 
 $wp_customize->add_control(
     new WP_Customize_Control(
@@ -396,6 +396,358 @@ $wp_customize->add_control(
         )
     );
 
+
+
+/*
+	Index Featured Listings Section
+*/
+$wp_customize->add_section('featured_listings_section' , array(
+  'title' => __('Featured Listings Section','foundation'), 'description' => 'Settings for the featured images section on the home page.',
+));
+
+$wp_customize->add_setting('show_featured_listings', array('default' => '1'));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'show_featured_listings',
+        array(
+            'label'          => __( 'Number Of Feature Panes', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'show_featured_listings',
+		'type'       => 'radio',
+		'choices'    => array(
+            		'0' => 'Hide',
+            		'1' => 'Show',
+        	),
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_1_title', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_1_title',
+        array(
+            'label'          => __( '#1 Featured Listing: Title', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_1_title',
+            'type'           => 'text'
+            )
+        )
+    );
+
+
+
+$wp_customize->add_setting('featured_listing_1_url', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_1_url',
+        array(
+            'label'          => __( '#1 Featured Listing: Listing URL', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_1_url',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_1_image_url', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_1_image_url',
+        array(
+            'label'          => __( '#1 Featured Listing: Image URL', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_1_image_url',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_1_num_bedrooms', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_1_num_bedrooms',
+        array(
+            'label'          => __( '#1 Featured Listing: Number of Bedrooms', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_1_num_bedrooms',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_1_num_bathrooms', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_1_num_bathrooms',
+        array(
+            'label'          => __( '#1 Featured Listing: Number of Bathrooms', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_1_num_bathrooms',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_1_num_cars', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_1_num_cars',
+        array(
+            'label'          => __( '#1 Featured Listing: Number of Cars', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_1_num_cars',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_1_description', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_1_description',
+        array(
+            'label'          => __( '#1 Featured Listing: Description', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_1_description',
+            'type'           => 'textarea'
+            )
+        )
+    );
+
+/*****/
+
+$wp_customize->add_setting('featured_listing_2_title', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_2_title',
+        array(
+            'label'          => __( '#2 Featured Listing: Title', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_2_title',
+            'type'           => 'text'
+            )
+        )
+    );
+
+
+
+$wp_customize->add_setting('featured_listing_2_url', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_2_url',
+        array(
+            'label'          => __( '#2 Featured Listing: Listing URL', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_2_url',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_2_image_url', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_2_image_url',
+        array(
+            'label'          => __( '#2 Featured Listing: Image URL', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_2_image_url',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_2_num_bedrooms', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_2_num_bedrooms',
+        array(
+            'label'          => __( '#2 Featured Listing: Number of Bedrooms', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_2_num_bedrooms',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_2_num_bathrooms', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_2_num_bathrooms',
+        array(
+            'label'          => __( '#2 Featured Listing: Number of Bathrooms', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_2_num_bathrooms',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_2_num_cars', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_2_num_cars',
+        array(
+            'label'          => __( '#2 Featured Listing: Number of Cars', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_2_num_cars',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_2_description', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_2_description',
+        array(
+            'label'          => __( '#2 Featured Listing: Description', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_2_description',
+            'type'           => 'textarea'
+            )
+        )
+    );
+
+/**********/
+
+$wp_customize->add_setting('featured_listing_3_title', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_3_title',
+        array(
+            'label'          => __( '#3 Featured Listing: Title', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_3_title',
+            'type'           => 'text'
+            )
+        )
+    );
+
+
+
+$wp_customize->add_setting('featured_listing_3_url', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_3_url',
+        array(
+            'label'          => __( '#3 Featured Listing: Listing URL', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_3_url',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_3_image_url', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_3_image_url',
+        array(
+            'label'          => __( '#3 Featured Listing: Image URL', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_3_image_url',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_3_num_bedrooms', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_3_num_bedrooms',
+        array(
+            'label'          => __( '#3 Featured Listing: Number of Bedrooms', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_3_num_bedrooms',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_3_num_bathrooms', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_3_num_bathrooms',
+        array(
+            'label'          => __( '#3 Featured Listing: Number of Bathrooms', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_3_num_bathrooms',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_3_num_cars', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_3_num_cars',
+        array(
+            'label'          => __( '#3 Featured Listing: Number of Cars', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_3_num_cars',
+            'type'           => 'text'
+            )
+        )
+    );
+
+$wp_customize->add_setting('featured_listing_3_description', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_listing_3_description',
+        array(
+            'label'          => __( '#3 Featured Listing: Description', 'foundation' ),
+            'section'        => 'featured_listings_section',
+            'settings'       => 'featured_listing_3_description',
+            'type'           => 'textarea'
+            )
+        )
+    );
 
 
 
