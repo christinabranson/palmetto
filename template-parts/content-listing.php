@@ -18,11 +18,11 @@ for ($i=1; $i <= 10; $i++) {
 //var_dump($images);
 ?>
 
-<section id="listing">
+<section id="listing" itemscope itemtype ="http://schema.org/Residence">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<div class="row">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
 				<?php foundation_meta_edit(); ?>
 		</div>
 		<div class="row">
@@ -34,7 +34,7 @@ for ($i=1; $i <= 10; $i++) {
     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
 	<?php foreach ($images as $image) { ?>
     		<li class="is-active orbit-slide">
-      			<img class="orbit-image" src="<?php echo $image['url']; ?>" alt="Space">
+      			<img class="orbit-image" src="<?php echo $image['url']; ?>" alt="Space" itemprop="image">
 			<figcaption class="orbit-caption"><?php echo $image['caption']; ?></figcaption>
     		</li>		
 	<?php } ?>
@@ -61,11 +61,14 @@ for ($i=1; $i <= 10; $i++) {
 			<div class="large-4 columns" style="background: #fff; padding: 20px;">
 					<h3>Property Information</h3>
 					<?php if ( get_field('monthly_rent') ) { ?>
-						<p><i class="fa fa-dollar"></i> <?php echo get_field('monthly_rent'); ?> Per Month</p>
+						<div itemscope itemtype ="http://schema.org/Offer">
+						<p><i class="fa fa-home"></i> <span itemprop="name"><?php echo get_field('monthly_rent'); ?> Per Month</p></span>
+						
 					<?php } ?>
 
 					<?php if ( get_field('availability') ) { ?>
-						<p><i class="fa fa-calendar"></i> <?php echo get_field('availability'); ?></p>
+						<p><i class="fa fa-calendar"></i> <span itemprop="availability"><?php echo get_field('availability'); ?></p></span>
+						</div>
 					<?php } ?>
 
 					<?php if ( get_field('number_of_bedrooms') ) { ?>

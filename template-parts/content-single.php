@@ -8,17 +8,16 @@
  */
 ?>
 
-<div class="row">
-	<div class="large-8 columns">
+<div class="row" id="blog">
+	<div class="large-8 columns"  itemscope itemtype ="http://schema.org/BlogPost">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
 
 			<?php foundation_entry_meta(); ?>
 
 			<?php foundation_excerpt(); ?>
 
-			<?php foundation_post_thumbnail(); ?>
-
+			<div itemprop="articleBody">
 			<?php
 				the_content();
 
@@ -31,10 +30,9 @@
 					'separator'   => '<span class="screen-reader-text">, </span>',
 				) );
 
-				if ( '' !== get_the_author_meta( 'description' ) ) {
-					get_template_part( 'template-parts/biography' );
-				}
+
 			?>
+			</div>
 
 		</article><!-- #post-## -->
 	</div>
