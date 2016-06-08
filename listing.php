@@ -1,12 +1,10 @@
 <?php
 /**
  * 
- *  Template Name: Listing Template 
- * The template for displaying pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
+ * Template Name: Listing Template 
+ * 
+ * The template for displaying pages designated as listing pages.
+ * 
  *
  * @package WordPress
  * @subpackage Real Estate
@@ -14,14 +12,10 @@
  */
 
 get_header();
+?>
 
-
-
- ?>
-
-	<!--- <div class="large-8 columns"> -->
-		<main id="main" class="site-main" role="main">
-			<?php
+<div class="row">
+		<?php
 			// Start the loop.
 				while ( have_posts() ) : the_post();
 
@@ -37,19 +31,8 @@ get_header();
 
 			// End of the loop.
 				endwhile;
-			?>
-
-		</main><!-- .site-main -->
-
-		<!--- TODO: Figure out what this is -->
-		<?php //get_sidebar( 'content-bottom' ); ?>
-
-	<!--- </div> -->
-
-	<!--- TODO: Do I really want a sidebar here? -->
-	<!--- <div class="large-4 columns"> -->
-	<!---	<?php //get_sidebar(); ?> -->
-	<!--- </div> -->
-</div>
+		?>
+	
+</div> <!-- row -->
 
 <?php get_footer(); ?>
