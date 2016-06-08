@@ -16,8 +16,7 @@
 get_header(); ?>
 <div class="row">
 	<div class="large-10 large-offset-1 columns">
-		<div class="panel">
-		<main id="main" class="site-main" role="main">
+		<div class="panel pagepanel">
 			<?php
 			// Start the loop.
 				while ( have_posts() ) : the_post();
@@ -33,10 +32,8 @@ get_header(); ?>
 			// End of the loop.
 				endwhile;
 			?>
-
-		</main><!-- .site-main -->
-		</div>
-	</div>
-</div>
+		</div> <!-- panel -->
+	</div> <!-- column -->
+</div> <!-- row -->
 
 <?php get_footer(); ?>
