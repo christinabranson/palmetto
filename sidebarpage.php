@@ -16,8 +16,6 @@
 get_header(); ?>
 <div class="row">
 	<div class="large-8 columns">
-		<div class="panel">
-		<main id="main" class="site-main" role="main">
 			<?php
 			// Start the loop.
 				while ( have_posts() ) : the_post();
@@ -33,13 +31,10 @@ get_header(); ?>
 			// End of the loop.
 				endwhile;
 			?>
-
-		</main><!-- .site-main -->
-		</div>
-					<div class="large-4 columns">
-				<?php get_sidebar( 'page' ); ?>
-			</div>
-	</div>
-</div>
+	</div> <!-- main column -->
+	<div class="large-4 columns">
+		<?php get_sidebar( 'page' ); ?>
+	</div> <!-- sidebar column -->
+</div> <!-- row -->
 
 <?php get_footer(); ?>
