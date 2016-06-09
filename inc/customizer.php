@@ -60,6 +60,7 @@ $colors[] = array(
 */
 $wp_customize->add_section('contact_header' , array(
   'title' => __('Contact Header','foundation'),
+  'description' => __('Allows you to modify the contact information for the top bar of the website. Leave fields blank if no link exists.', 'foundation'),
 ));
 
 
@@ -189,6 +190,7 @@ $wp_customize->add_control(
 */
 $wp_customize->add_section('three_pane' , array(
   'title' => __('Three Pane Featured','foundation'),
+  'description' => __('Allows you to customize the highlight panes on the front page (template Home). Icons use the Font Awesome format. For example, to show the house icon, one would use "fa-home". You can refer to the available icons here: http://fontawesome.io/icons/', 'foundation'),
 ));
 
 $wp_customize->add_setting('number_of_panes', array('default' => '3'));
@@ -403,6 +405,7 @@ $wp_customize->add_control(
 */
 $wp_customize->add_section('featured_listings_section' , array(
   'title' => __('Featured Listings Section','foundation'), 'description' => 'Settings for the featured images section on the home page.',
+  'description' => __('Allows you to add up to three featured properties on the Home page template.', 'foundation'),
 ));
 
 $wp_customize->add_setting('show_featured_listings', array('default' => '1'));
