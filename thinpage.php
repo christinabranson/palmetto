@@ -2,11 +2,9 @@
 /**
  * Template Name: Thin Page Template 
  * 
- * The template for displaying pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
+ * The template for displaying pages with a slightly thinner 
+ * width than the standard page and features content with a 
+ * white panel in the background.
  *
  * @package WordPress
  * @subpackage Real Estate

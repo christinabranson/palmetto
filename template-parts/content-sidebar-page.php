@@ -29,7 +29,7 @@
 <section id="post">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="row">
-			<div class="large-12 columns">
+			<div class="large-8 columns">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				<?php foundation_meta_edit(); ?>
 				<div class="entry-content">
@@ -51,5 +51,8 @@
 				} ?>
 				</div><!-- .entry-content -->
 		</div> <!-- row -->
+		<div class="large-4 columns">
+			<?php get_sidebar( 'page' ); ?>
+		</div> <!-- sidebar column -->
 	</article> <!-- article -->
 </section> <!-- section -->

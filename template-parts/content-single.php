@@ -7,7 +7,25 @@
  * @since Real Estate 0.1
  */
 ?>
-<p>content single</p>
+
+<?php
+	$thumb_id = get_post_thumbnail_id();
+	$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+	$thumb_url = $thumb_url_array[0];
+
+	if ($thumb_url && strpos($thumb_url,'default') === false) { ?>
+		<header class="front-page" style="background-image: url('<?php echo $thumb_url; ?>')";>
+			<div class="featured-property">
+				<div class="row">
+					
+				</div>
+			</div>
+		</header>
+
+<?php		
+	}
+ ?>
+ 
 <div class="row" id="blog">
 	<div class="large-8 columns"  itemscope itemtype ="http://schema.org/BlogPost">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
