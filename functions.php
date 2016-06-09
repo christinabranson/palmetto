@@ -9,15 +9,6 @@
  */
 
 
-
-
-/**
- * Twenty Sixteen only works in WordPress 4.4 or later.
- */
-if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-}
-
 if ( ! function_exists( 'foundation_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -41,6 +32,8 @@ function foundation_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+	
+	
 
 	/*
 	 * Enable support for custom logo.
@@ -114,6 +107,14 @@ function foundation_setup() {
 }
 endif; // foundation_setup
 add_action( 'after_setup_theme', 'foundation_setup' );
+
+
+//Add Excerpts to Pages
+add_action('init', 'foundation_add_page_excerpt_support');
+
+function foundation_add_page_excerpt_support() {
+	add_post_type_support( 'page', 'excerpt' );
+}
 
 
 /* NAVIGATION MENU FOR FOUNDATION */
