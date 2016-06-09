@@ -105,13 +105,11 @@
 						// TODO: Not sure why it's displaying the name and the logo
 						// check to see what foundation_the_custom_logo() returns if no logo specified
 						// TODO: Make either of these a home link
-						if(foundation_the_custom_logo()) {
-							?>
+						if( foundation_the_custom_logo() ) { ?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php foundation_the_custom_logo(); ?></a>
 						<?php } else { ?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-						<?php }
-					?>
+						<?php } ?>
 				</li>
       			</div>
 			<div class="top-bar-right">
@@ -130,9 +128,9 @@
 	<!--- HEADER FOR FEATURED HOME (MAIN PAGE) -->
 	<!--- TODO: This should be customizable in Customizr, check https://github.com/WordPress/twentysixteen/blob/master/header.php for implementation -->
 	<!--- SHOW ONLY FOR HOME PAGE -->
-	<?php if ( is_front_page() && is_home() ) : ?>
+	<?php if ( is_front_page() ) : ?>
 	<?php if ( get_header_image() ) { ?>
-		<header class="front-page" style="background-image: url('<?php header_image(); ?>');>
+		<header class="front-page" style="background-image: url('<?php header_image(); ?>')";>
 			<div class="featured-property">
 				<div class="row">
 				<span class="featured">Featured Property: Westbury Park</span><br/><span class="featured-sub"><i class="fa fa-bed"></i> 3 Bedrooms | <i class="fa fa-fire-extinguisher icon-rotate-90"></i> 2 Bathrooms | <i class="fa fa-car"></i> 1 Car | <a href="">View Listing</a></span>
