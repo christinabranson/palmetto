@@ -16,7 +16,7 @@
 				<?php get_sidebar( 'content-bottom' ); ?>
 		</div>
 		<div class="row text-center">
-			Powered by <a href="Wordpress" target="_new">Wordpress</a>. Theme by <a href="http://christinabranson.github.io">Christina Branson</a>.
+			Powered by <a href="Wordpress" target="_new">Wordpress</a>. Palmetto Wordpress Theme by <a href="http://christinabranson.github.io">Christina Branson</a>.
 		</div>
 </footer><!-- .site-footer -->
 
