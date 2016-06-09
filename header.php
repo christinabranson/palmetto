@@ -97,7 +97,13 @@
 		</div>
 	</div>
 	<!--- TOP NAVIGATION BAR -->
-	<div class="top-bar">
+	
+	<div class="title-bar" data-responsive-toggle="top-nav-bar" data-hide-for="medium">
+  		<button class="menu-icon" type="button" data-toggle></button>
+  		<div class="title-bar-title">Menu</div>
+	</div>
+
+	<div class="top-bar" id="top-nav-bar">
 		<div class="row">
 			<div class="top-bar-left">
 				<li class="menu-text">
