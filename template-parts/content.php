@@ -3,11 +3,11 @@
  * The template part for displaying content
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 ?>
-
+<p>content.php</p>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype ="http://schema.org/BlogPost">
 
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>

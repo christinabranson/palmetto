@@ -146,7 +146,7 @@ li {
 /* If front page, show large header */
 
 header {
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 40px 0px;
   background: #000 url('http://blufftonhomes4rent.com/wp-content/uploads/2015/11/cropped-Front-Landscape.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -209,8 +209,17 @@ footer {
 
 /* Blog Section */
 
+#blog h2 {
+  margin-top:10px;
+}
+
 #blog .meta {
   font-size: .8em;
+  padding: 10px;
+}
+
+#blog .meta a {
+  color: #000;
 }
 
 #blog .meta i {
@@ -221,13 +230,9 @@ footer {
   padding: 1px 5px 1px 10px;
 }
 
-#blog {
-overflow:hidden;
-}
-
 #blog figure {
-  width: 100%;
-  background: #eee;
+  max-width: 100%;
+  background: #fff;
   padding: 10px 10px 0px 10px;
   margin: 0px;
   border: 1px solid #ccc;
@@ -280,14 +285,6 @@ overflow:hidden;
   border-bottom: 1px #ccc solid;
 }
 
-
-/* Sidebars */
-
-.sidebar section {
-	margin: 10px 0px;
-	padding: 10px 0px;
-}
-
 /* Listings */
 #listing h2 {
 	margin-top: 20px;
@@ -306,8 +303,21 @@ overflow:hidden;
 }
 
 
+/* Sidebars */
+
+.sidebar section {
+	margin: 10px 0px;
+	padding: 10px 0px;
+}
+
+
 
 /* Etc */
 .icon-rotate-90 {
   transform: rotate(270deg);
+}
+
+.pagepanel {
+    margin: 20px 0px;
+    padding: 0px 50px;
 }
