@@ -173,7 +173,7 @@ get_header(); ?>
             						<h4><?php echo $featured_listing_1_title; ?></h4>
             						<p><?php echo $featured_listing_1_description; ?></p><p class="text-center">
 							<a class="button text-center" src="<?php echo $featured_listing_1_url; ?>">View Listing</a></p>
-         					 </div>
+         				</div>
 					</div>
 				<?php } ?>
 			</div>
