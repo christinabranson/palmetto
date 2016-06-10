@@ -80,7 +80,7 @@ ul,
 li {
   list-style-type: none;
   margin: 0px;
-  padding 0px;
+  padding: 0px;
 }
 
 
@@ -107,6 +107,7 @@ li {
 .top-bar ul {
   background: #fff;
   vertical-align: middle;
+  color: #E85302;
 }
 
 .top-bar-right {
@@ -121,6 +122,18 @@ li {
 
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
     display: none;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a, .menu > li > a {
+    vertical-align: middle;
+    display:inline;
+    font-family: 'Cantarell', sans-serif;
+    margin-left: -10px;
+}
+
+.sub-menu-link {
+        font-family: 'Cantarell', sans-serif;
+
 }
 
 .top-bar-logo {
