@@ -753,7 +753,45 @@ $wp_customize->add_control(
     );
 
 
+/*
+	Placeholder Images
+*/
+$wp_customize->add_section('placeholder_images' , array(
+  'title' => __('Placeholder Image Section','foundation'), 'description' => 'Add placeholder images where featured images unavailable.',
+  'description' => __('Add placeholder images where featured images unavailable.', 'foundation'),
+));
 
+$wp_customize->add_setting('listing_placeholder_image', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'listing_placeholder_image',
+        array(
+            'label'          => __( 'Listing Placeholder Image', 'foundation' ),
+            'section'        => 'placeholder_images',
+            'settings'       => 'listing_placeholder_image',
+		    'type'       => 'text',
+
+            )
+        )
+    );
+    
+$wp_customize->add_setting('blog_placeholder_image', array('default' => ''));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'blog_placeholder_image',
+        array(
+            'label'          => __( 'Blog Placeholder Image', 'foundation' ),
+            'section'        => 'placeholder_images',
+            'settings'       => 'blog_placeholder_image',
+		    'type'       => 'text',
+
+            )
+        )
+    );
 
 }
 add_action( 'customize_register', 'foundation_customize_register' );

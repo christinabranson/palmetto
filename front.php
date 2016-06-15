@@ -150,6 +150,8 @@ get_header(); ?>
 	$featured_listing_3_num_bathrooms= get_theme_mod( 'featured_listing_3_num_bathrooms', '' );	
 	$featured_listing_3_num_cars= get_theme_mod( 'featured_listing_3_num_cars', '' );	
 	$featured_listing_3_description= get_theme_mod( 'featured_listing_3_description', '' );	
+	
+	$listing_placeholder_image= get_theme_mod( 'listing_placeholder_image', '' );	
 
 	if ($show_featured_listings) { ?>
   <section class="white-section">
@@ -162,8 +164,14 @@ get_header(); ?>
 				<?php if ($featured_listing_1_title) { ?>
 					<div class="listing-box" data-equalizer-watch>
 						<div class="listing-image">
-            						<img src="<?php echo $featured_listing_1_image_url; ?>" />
-          					</div>
+							<?php if ($featured_listing_1_image_url) { ?>
+            					<img src="<?php echo $featured_listing_1_image_url; ?>" />
+            				<?php } elseif ($listing_placeholder_image) { ?>
+            					<img src="<?php echo $listing_placeholder_image; ?>" />
+            				<?php } else { ?>
+            					<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
+            				<?php } ?>
+          				</div>
 						<div class="listing-details">
             						<i class="fa fa-bed"></i> <?php echo $featured_listing_1_num_bedrooms; ?> Bedrooms | 
 							<i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_listing_1_num_bathrooms; ?> Bathrooms | 
@@ -181,8 +189,14 @@ get_header(); ?>
 				<?php if ($featured_listing_2_title) { ?>
 					<div class="listing-box" data-equalizer-watch>
 						<div class="listing-image">
-            						<img src="<?php echo $featured_listing_2_image_url; ?>" />
-          					</div>
+							<?php if ($featured_listing_2_image_url) { ?>
+            					<img src="<?php echo $featured_listing_2_image_url; ?>" />
+            				<?php } elseif ($listing_placeholder_image) { ?>
+            					<img src="<?php echo $listing_placeholder_image; ?>" />
+            				<?php } else { ?>
+            					<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
+            				<?php } ?>
+          				</div>
 						<div class="listing-details">
             						<i class="fa fa-bed"></i> <?php echo $featured_listing_2_num_bedrooms; ?> Bedrooms | 
 							<i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_listing_2_num_bathrooms; ?> Bathrooms | 
@@ -200,8 +214,14 @@ get_header(); ?>
 				<?php if ($featured_listing_3_title) { ?>
 					<div class="listing-box" data-equalizer-watch>
 						<div class="listing-image">
-            						<img src="<?php echo $featured_listing_3_image_url; ?>" />
-          					</div>
+							<?php if ($featured_listing_3_image_url) { ?>
+            					<img src="<?php echo $featured_listing_3_image_url; ?>" />
+            				<?php } elseif ($listing_placeholder_image) { ?>
+            					<img src="<?php echo $listing_placeholder_image; ?>" />
+            				<?php } else { ?>
+            					<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
+            				<?php } ?>
+          				</div>
 						<div class="listing-details">
             						<i class="fa fa-bed"></i> <?php echo $featured_listing_3_num_bedrooms; ?> Bedrooms | 
 							<i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_listing_3_num_bathrooms; ?> Bathrooms | 
@@ -221,10 +241,10 @@ get_header(); ?>
 
 ?>
 </section> <!-- listing section -->
+
+
 <section id="blog">
 <div class="row" data-equalizer>
-
-
 <?php
  global $post;
  $myposts = get_posts('numberposts=3');
