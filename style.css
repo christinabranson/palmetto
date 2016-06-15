@@ -141,6 +141,10 @@ li {
   vertical-align: middle;
 }
 
+.custom-logo {
+  max-width: 200px;
+}
+
 .top-social-media-icons i {
   display: inline-block;
   float: left;
