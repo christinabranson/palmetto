@@ -30,7 +30,7 @@
   body .button { background-color:  <?php echo get_option('body_link_color'); ?>; }
   body a:hover { color:  <?php echo get_option('body_link_hover_color'); ?>; }
   body .button:hover { background-color:  <?php echo get_option('body_link_hover_color'); ?>; }
-  .top-bar ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
+  .top-bar ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */git remote set-url origin 
 </style>
 
 </head>
@@ -101,22 +101,25 @@
 	
 	<div class="title-bar" data-responsive-toggle="top-nav-bar" data-hide-for="medium">
   		<button class="menu-icon" type="button" data-toggle></button>
-  		<div class="title-bar-title">Menu</div>
+  		<div class="title-bar-title">
+  			<?php if (has_custom_logo()) { ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php foundation_the_custom_logo(); ?></a>
+			<?php } else { ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1><?php echo bloginfo( 'name' ); ?></h1></a>
+			<?php } ?>
+  			
+  		</div>
 	</div>
 
 	<div class="top-bar" id="top-nav-bar">
 		<div class="row">
 			<div class="top-bar-left">
 				<li class="menu-text">
-					<?php
-						// TODO: Not sure why it's displaying the name and the logo
-						// check to see what foundation_the_custom_logo() returns if no logo specified
-						// TODO: Make either of these a home link
-						if( foundation_the_custom_logo() ) { ?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php foundation_the_custom_logo(); ?></a>
-						<?php } else { ?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-						<?php } ?>
+					<?php if (has_custom_logo()) { ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php foundation_the_custom_logo(); ?></a>
+					<?php } else { ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1><?php echo bloginfo( 'name' ); ?></h1></a>
+					<?php } ?>
 				</li>
       			</div>
 			<div class="top-bar-right">
