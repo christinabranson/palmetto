@@ -120,7 +120,7 @@ get_header(); ?>
 
 ?>
 </div>
-</section>
+</section> <!-- panel section -->
 
 
   <!--- FRONT PAGE SECTION FOR SAMPLE OF LISTINGS -->
@@ -211,7 +211,7 @@ get_header(); ?>
             						<h4><?php echo $featured_listing_3_title; ?></h4>
             						<p><?php echo $featured_listing_3_description; ?></p><p class="text-center">
 							<a class="button text-center" src="<?php echo $featured_listing_3_url; ?>">View Listing</a></p>
-         					 </div>
+         				</div>
 					</div>
 				<?php } ?>
 			</div>
@@ -220,25 +220,32 @@ get_header(); ?>
 
 
 ?>
-
-
- </section>
-
-<div class="row">
-	<div id="blog">
+</section> <!-- listing section -->
+<section id="blog">
+<div class="row" data-equalizer>
 
 
 <?php
  global $post;
- $myposts = get_posts('numberposts=5&category=1');
- foreach($myposts as $post) :
- ?>
- <?php the_title(); ?>
- <?php the_content(); ?>
+ $myposts = get_posts('numberposts=3');
+ foreach($myposts as $post) :?>
+ <div class="large-4 columns">
+ 	<div class="listing-box" data-equalizer-watch>
+ 	<div class="listing-image">
+ 		<img src="<?php the_post_thumbnail(); ?>" />
+ 		
+ 	</div>
+ 	<div class="listing-text">
+ 		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+ 		<p><?php substr(the_content(),50); ?></p>
+ 		<?php the_content(); ?>
+ 		<?php the_excerpt(); ?>
+ 	</div>
+ </div>
+ </div>
  <?php endforeach; ?>
 
 
-	</div>
-
 </div>
+</section> <!-- blog post section -->
 <?php get_footer(); ?>
