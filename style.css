@@ -1,4 +1,3 @@
-<?php
 /*
 Theme Name: Real Estate Theme
 Theme URI: https://christinabranson.com
@@ -17,6 +16,8 @@ http://schema.org/Offer
 
 
 */
+
+
 /* General Settings */
 
 body {
@@ -24,7 +25,8 @@ body {
   font-family: 'Cantarell', sans-serif;
 }
 
-.row, .columns {
+.row,
+.columns {
   font-family: 'Cantarell', sans-serif;
 }
 
@@ -33,7 +35,7 @@ a {
 }
 
 a:hover {
-  color:#FEBD00;
+  color: #FEBD00;
 }
 
 .button {
@@ -41,11 +43,8 @@ a:hover {
 }
 
 .button:hover {
-    background-color: #FEBD00;
-
+  background-color: #FEBD00;
 }
-
-
 
 h1,
 h2,
@@ -60,7 +59,6 @@ h6 {
   max-width: 1200px;
 }
 
-
 .bigsection {
   margin: 500px 0;
   padding: 20px 0px;
@@ -72,8 +70,8 @@ section {
 }
 
 .white-section {
-  background: #fff;  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-
+  background: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 ul,
@@ -110,8 +108,11 @@ li {
   color: #E85302;
 }
 
-.top-bar-right {
-  margin-top: 40px;
+.top-bar-right .menu {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 15%;
 }
 
 .top-bar-right-bottom,
@@ -120,20 +121,20 @@ li {
   vertical-align: middle;
 }
 
-.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-    display: none;
+.dropdown.menu> li.is-dropdown-submenu-parent> a::after {
+  display: none;
 }
 
-.dropdown.menu > li.is-dropdown-submenu-parent > a, .menu > li > a {
-    vertical-align: middle;
-    display:inline;
-    font-family: 'Cantarell', sans-serif;
-    margin-left: -10px;
+.dropdown.menu> li.is-dropdown-submenu-parent> a,
+.menu> li> a {
+  vertical-align: middle;
+  display: inline;
+  font-family: 'Cantarell', sans-serif;
+  margin-left: -10px;
 }
 
 .sub-menu-link {
-        font-family: 'Cantarell', sans-serif;
-
+  font-family: 'Cantarell', sans-serif;
 }
 
 .top-bar-logo {
@@ -156,6 +157,25 @@ li {
   font-weight: normal;
 }
 
+.title-bar {
+  background: #fff;
+  align: center;
+}
+
+.title-bar img {
+  max-width: 100px;
+  float: center;
+}
+
+.menu-icon {
+    display: inline-block;
+    color: #000;
+}
+
+.menu-icon::after, .menu-icon:hover::after {
+    background: #000;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+}
 
 /* Header */
 
@@ -205,8 +225,9 @@ header .standard-page {}
 
 
 /* Three section panels */
+
 .panel {
-    margin: 5px 5px;
+  margin: 5px 5px;
   padding: 10px 20px;
   background: #fff;
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
@@ -227,7 +248,7 @@ footer {
 /* Blog Section */
 
 #blog h2 {
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 #blog .meta {
@@ -247,7 +268,8 @@ footer {
   padding: 1px 5px 1px 10px;
 }
 
-#blog figure, figure {
+#blog figure,
+figure {
   max-width: 100%;
   background: #fff;
   padding: 10px 10px 0px 10px;
@@ -255,7 +277,8 @@ footer {
   border: 1px solid #ccc;
 }
 
-#blog figure .caption, figure .caption {
+#blog figure .caption,
+figure .caption {
   font-size: .8em;
   font-style: italic;
 }
@@ -266,12 +289,12 @@ footer {
 
 
 /* Listing Section */
+
 .listing-box {
   margin: 5px 5px;
   padding: 0px;
   background: #fff;
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-
 }
 
 .listing-image {
@@ -283,10 +306,10 @@ footer {
 }
 
 .listing-image img {
- max-height:100%;
- max-width:auto;
+  max-height: 100%;
+  max-width: auto;
   height: 300px;
-  width: auto;
+  width: 100%;
 }
 
 .listing-text {
@@ -295,46 +318,48 @@ footer {
 }
 
 .listing-details {
-  background: rgba(0,0,0,0.2);
-    color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
   padding: 10px;
   font-size: 0.9em;
   border-bottom: 1px #ccc solid;
 }
 
+
 /* Listings */
+
 #listing h2 {
-	margin-top: 20px;
-	padding-top: 20px;
-	border-top: 1px solid #000;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #000;
 }
 
 #listing .orbit {
-	min-height: 400px;
-	max-height: 400px;
+  min-height: 400px;
+  max-height: 400px;
 }
 
 #listing .orbit li {
-	min-height: 400px;
-	max-height: 400px;
+  min-height: 400px;
+  max-height: 400px;
 }
 
 
 /* Sidebars */
 
 .sidebar section {
-	margin: 10px 0px;
-	padding: 10px 0px;
+  margin: 10px 0px;
+  padding: 10px 0px;
 }
 
 
-
 /* Etc */
+
 .icon-rotate-90 {
   transform: rotate(270deg);
 }
 
 .pagepanel {
-    margin: 20px 0px;
-    padding: 0px 50px;
+  margin: 20px 0px;
+  padding: 0px 50px;
 }
