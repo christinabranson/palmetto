@@ -30,6 +30,7 @@
   body .button { background-color:  <?php echo get_option('body_link_color'); ?>; }
   body a:hover { color:  <?php echo get_option('body_link_hover_color'); ?>; }
   body .button:hover { background-color:  <?php echo get_option('body_link_hover_color'); ?>; }
+  .top-bar ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
 </style>
 
 </head>
