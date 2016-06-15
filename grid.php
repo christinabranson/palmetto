@@ -34,6 +34,8 @@ get_header(); ?>
 				$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 				$thumb_url = $thumb_url_array[0];
 				
+				$listing_placeholder_image= get_theme_mod( 'listing_placeholder_image', '' );	
+				
 				
 				if ($counter % 3 == 0) { ?>
 					</div> <!-- end row -->
@@ -47,10 +49,10 @@ get_header(); ?>
 							<div class="listing-image">
 									<?php if ($thumb_url && strpos($thumb_url,'default') === false) { ?>
             							<img src="<?php echo $thumb_url; ?>" />
-            						<?php } elseif (foundation_the_custom_logo()) { ?>
-            							<img src="<?php foundation_the_custom_logo(); ?>" />
+            						<?php } elseif ($listing_placeholder_image) { ?>
+            							<img src="<?php echo $listing_placeholder_image; ?>" />
             						<?php } else { ?>
-            						
+            							<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
             						<?php } ?>
           					</div> <!-- listing image -->
           					<div class="listing-text">
