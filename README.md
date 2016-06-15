@@ -47,3 +47,4 @@ The theme comes with multiple built-in customizer options.
 * Bring back header images for posts with featured images
 * Figure out how to preserve meta data for featured images
 * Add functionality to replace logo with site text and description if no logo
+* Add front page featured property
