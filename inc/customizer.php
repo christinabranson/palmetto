@@ -29,7 +29,7 @@ $colors[] = array(
 		'label' => __('Body Link/Button Color', 'foundation')
 	);
 $colors[] = array(
-		'slug'=>'body_link__hover_color', 
+		'slug'=>'body_link_hover_color', 
 		'default' => '#FEBD00',
 		'label' => __('Body Link/Button Hover Color', 'foundation')
 	);
