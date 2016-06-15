@@ -42,11 +42,10 @@ function foundation_setup() {
 	 */
 //TODO: Change this to fit theme. I think this is 200 width
 	add_theme_support( 'custom-logo', array(
-		'height'      => 240,
-		'width'       => 240,
-		'flex-height' => true,
-			'header-text' => array( '', '' ),
-	) );
+		'height'      => 200,
+		'width'       => 200,
+		'flex-height' => true
+		) );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -116,6 +115,20 @@ function foundation_add_page_excerpt_support() {
 	add_post_type_support( 'page', 'excerpt' );
 }
 
+/**
+ * Sets the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ *
+ * @since Twenty Sixteen 1.0
+ */
+function foundation_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'foundation_content_width', 1200 );
+}
+add_action( 'after_setup_theme', 'foundation_content_width', 0 );
+
 
 /* NAVIGATION MENU FOR FOUNDATION */
 function foundation_nav_menu() {
@@ -132,6 +145,8 @@ function foundation_nav_menu() {
 					));
 
 }
+
+
 	/*
 	 * Walker function to allow for top menu with Foundation 6
 	 */
@@ -145,6 +160,55 @@ class F6_TOPBAR_MENU_WALKER extends Walker_Nav_Menu
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class=\"vertical menu\" data-submenu>\n";
 	}
+	
+	// add main/sub classes to li's and links
+ function start_el( &$output, $item, $depth, $args ) {
+ 
+
+ 
+    global $wp_query;
+    $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
+  
+    // depth dependent classes
+    $depth_classes = array(
+        ( $depth == 0 ? 'main-menu-item' : 'sub-menu-item' ),
+        ( $depth >=2 ? 'sub-sub-menu-item' : '' ),
+        ( $depth % 2 ? 'menu-item-odd' : 'menu-item-even' ),
+        'menu-item-depth-' . $depth
+    );
+    $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
+  
+    // passed classes
+    
+    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+    $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
+	
+  
+    // build html
+    $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class="' . $depth_class_names . ' ' . $class_names . '">';
+  
+    // link attributes
+    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+    //$attributes .= ! empty( $item->xfn )        ? ' class="'    . esc_attr( $item->xfn        ) .'"' : '';
+    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+    $attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
+  
+    $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+        $args->before,
+        $attributes,
+        $args->link_before,
+        apply_filters( 'the_title', $item->title, $item->ID ),
+        $args->link_after,
+        $args->after
+    );
+  
+    // build html
+    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+}
+
+
 }
  
 //Optional fallback
@@ -201,16 +265,18 @@ function foundation_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
-
+	
 	register_sidebar( array(
-		'name'          => __( 'Sidebar - Blog', 'foundation' ),
-		'id'            => 'sidebar-blog',
-		'description'   => __( 'Appears on the sidebar for Blog posts', 'foundation' ),
+		'name'          => __( 'Content Bottom 3', 'foundation' ),
+		'id'            => 'sidebar-4',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'foundation' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+
+
 
 	register_sidebar( array(
 		'name'          => __( 'Sidebar - Page', 'foundation' ),
