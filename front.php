@@ -249,10 +249,25 @@ get_header(); ?>
  global $post;
  $myposts = get_posts('numberposts=3');
  foreach($myposts as $post) :?>
+ 
+ <?php 
+	// Get thumbnail image if exists
+	$thumb_id = get_post_thumbnail_id($post->ID);
+	$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+	$thumb_url = $thumb_url_array[0];	
+	
+	$blog_placeholder_image= get_theme_mod( 'blog_placeholder_image', '' );
+ ?>
  <div class="large-4 columns">
  	<div class="listing-box" data-equalizer-watch>
  	<div class="listing-image">
- 		<img src="<?php the_post_thumbnail(); ?>" />
+ 		<?php if ($thumb_url && strpos($thumb_url,'default') === false) { ?>
+ 			<img src="<?php the_post_thumbnail(); ?>" />
+ 		<?php } elseif ($blog_placeholder_image) { ?>
+ 			<img src="<?php echo $blog_placeholder_image; ?>" />
+ 		<?php } else { ?>
+ 			<p>Upload a featured image to this post or use the Wordpress customizer to add a blog placeholder image.</p>
+ 		<?php } ?>
  		
  	</div>
  	<div class="listing-text">
