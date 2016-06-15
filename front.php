@@ -122,50 +122,61 @@ get_header(); ?>
 </div>
 </section> <!-- panel section -->
 
-
-  <!--- FRONT PAGE SECTION FOR SAMPLE OF LISTINGS -->
+<!--- FRONT PAGE SECTION FOR SAMPLE OF LISTINGS -->
 <?php
 	$show_featured_listings= get_theme_mod( 'show_featured_listings', '1' );
-
-	$featured_listing_1_title= get_theme_mod( 'featured_listing_1_title', '' );	
-	$featured_listing_1_url= get_theme_mod( 'featured_listing_1_url', '' );
-	$featured_listing_1_image_url= get_theme_mod( 'featured_listing_1_image_url', '' );
-	$featured_listing_1_num_bedrooms= get_theme_mod( 'featured_listing_1_num_bedrooms', '' );
-	$featured_listing_1_num_bathrooms= get_theme_mod( 'featured_listing_1_num_bathrooms', '' );	
-	$featured_listing_1_num_cars= get_theme_mod( 'featured_listing_1_num_cars', '' );	
-	$featured_listing_1_description= get_theme_mod( 'featured_listing_1_description', '' );	
-
-	$featured_listing_2_title= get_theme_mod( 'featured_listing_2_title', '' );	
-	$featured_listing_2_url= get_theme_mod( 'featured_listing_2_url', '' );
-	$featured_listing_2_image_url= get_theme_mod( 'featured_listing_2_image_url', '' );
-	$featured_listing_2_num_bedrooms= get_theme_mod( 'featured_listing_2_num_bedrooms', '' );
-	$featured_listing_2_num_bathrooms= get_theme_mod( 'featured_listing_2_num_bathrooms', '' );	
-	$featured_listing_2_num_cars= get_theme_mod( 'featured_listing_2_num_cars', '' );	
-	$featured_listing_2_description= get_theme_mod( 'featured_listing_2_description', '' );	
-
-	$featured_listing_3_title= get_theme_mod( 'featured_listing_3_title', '' );	
-	$featured_listing_3_url= get_theme_mod( 'featured_listing_3_url', '' );
-	$featured_listing_3_image_url= get_theme_mod( 'featured_listing_3_image_url', '' );
-	$featured_listing_3_num_bedrooms= get_theme_mod( 'featured_listing_3_num_bedrooms', '' );
-	$featured_listing_3_num_bathrooms= get_theme_mod( 'featured_listing_3_num_bathrooms', '' );	
-	$featured_listing_3_num_cars= get_theme_mod( 'featured_listing_3_num_cars', '' );	
-	$featured_listing_3_description= get_theme_mod( 'featured_listing_3_description', '' );	
+	
+	$featured_listing_title = array();
+	$featured_listing_title[] = get_theme_mod( 'featured_listing_1_title', '' );	
+	$featured_listing_title[] = get_theme_mod( 'featured_listing_2_title', '' );
+	$featured_listing_title[] = get_theme_mod( 'featured_listing_3_title', '' );
+	
+	$featured_listing_url = array();
+	$featured_listing_url[] = get_theme_mod( 'featured_listing_1_url', '' );
+	$featured_listing_url[] = get_theme_mod( 'featured_listing_2_url', '' );
+	$featured_listing_url[] = get_theme_mod( 'featured_listing_3_url', '' );
+	
+	$featured_listing_image = array();
+	$featured_listing_image[] = get_theme_mod( 'featured_listing_1_image_url', '' );	
+	$featured_listing_image[] = get_theme_mod( 'featured_listing_2_image_url', '' );
+	$featured_listing_image[] = get_theme_mod( 'featured_listing_3_image_url', '' );
+	
+	$featured_listing_num_bedrooms = array();
+	$featured_listing_num_bedrooms[] = get_theme_mod( 'featured_listing_1_num_bedrooms', '' );
+	$featured_listing_num_bedrooms[] = get_theme_mod( 'featured_listing_2_num_bedrooms', '' );
+	$featured_listing_num_bedrooms[] = get_theme_mod( 'featured_listing_3_num_bedrooms', '' );
+	
+	$featured_listing_num_bathrooms = array();
+	$featured_listing_num_bathrooms[] = get_theme_mod( 'featured_listing_1_num_bathrooms', '' );
+	$featured_listing_num_bathrooms[] = get_theme_mod( 'featured_listing_2_num_bathrooms', '' );
+	$featured_listing_num_bathrooms[] = get_theme_mod( 'featured_listing_3_num_bathrooms', '' );
+	
+	$featured_listing_num_cars = array();
+	$featured_listing_num_cars[] = get_theme_mod( 'featured_listing_1_num_cars', '' );
+	$featured_listing_num_cars[] = get_theme_mod( 'featured_listing_2_num_cars', '' );
+	$featured_listing_num_cars[] = get_theme_mod( 'featured_listing_3_num_cars', '' );
+	
+	$featured_listing_description = array();
+	$featured_listing_description[] = get_theme_mod( 'featured_listing_1_description', '' );
+	$featured_listing_description[] = get_theme_mod( 'featured_listing_2_description', '' );
+	$featured_listing_description[] = get_theme_mod( 'featured_listing_3_description', '' );
 	
 	$listing_placeholder_image= get_theme_mod( 'listing_placeholder_image', '' );	
 
-	if ($show_featured_listings) { ?>
+  if ($show_featured_listings) { ?>
   <section class="white-section">
     <div class="row white">
       <h2>Featured Listings</h2>
       <p>Some of our featured long-term home rentals. <a href="#">View all listings on our Homes For Rent page.</a></p>
     </div>
 		<div class="row" data-equalizer>
+			<?php for ($i = 0; $i <= 2; $i++) { ?>
 			<div class="large-4 columns">&nbsp;
-				<?php if ($featured_listing_1_title) { ?>
+				<?php if ($featured_listing_title[$i]) { ?>
 					<div class="listing-box" data-equalizer-watch>
 						<div class="listing-image">
-							<?php if ($featured_listing_1_image_url) { ?>
-            					<img src="<?php echo $featured_listing_1_image_url; ?>" />
+							<?php if ($featured_listing_image[$i]) { ?>
+            					<img src="<?php echo $featured_listing_image[$i]; ?>" />
             				<?php } elseif ($listing_placeholder_image) { ?>
             					<img src="<?php echo $listing_placeholder_image; ?>" />
             				<?php } else { ?>
@@ -173,73 +184,21 @@ get_header(); ?>
             				<?php } ?>
           				</div>
 						<div class="listing-details">
-            						<i class="fa fa-bed"></i> <?php echo $featured_listing_1_num_bedrooms; ?> Bedrooms | 
-							<i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_listing_1_num_bathrooms; ?> Bathrooms | 
-							<i class="fa fa-car"></i> <?php echo $featured_listing_1_num_cars; ?> Cars
+            				<i class="fa fa-bed"></i> <?php echo $featured_listing_num_bedrooms[$i]; ?> Bedrooms | 
+							<i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_listing_num_bathrooms[$i]; ?> Bathrooms | 
+							<i class="fa fa-car"></i> <?php echo $featured_listing_num_cars[$i]; ?> Cars
           					</div>
 						<div class="listing-text">
-            						<h4><?php echo $featured_listing_1_title; ?></h4>
-            						<p><?php echo $featured_listing_1_description; ?></p><p class="text-center">
-							<a class="button text-center" src="<?php echo $featured_listing_1_url; ?>">View Listing</a></p>
+            						<h4><?php echo $featured_listing_title[$i]; ?></h4>
+            						<p><?php echo $featured_listing_description[$i]; ?></p><p class="text-center">
+							<a class="button text-center" src="<?php echo $featured_listing_url[$i]; ?>">View Listing</a></p>
          				</div>
 					</div>
 				<?php } ?>
 			</div>
-			<div class="large-4 columns">&nbsp;
-				<?php if ($featured_listing_2_title) { ?>
-					<div class="listing-box" data-equalizer-watch>
-						<div class="listing-image">
-							<?php if ($featured_listing_2_image_url) { ?>
-            					<img src="<?php echo $featured_listing_2_image_url; ?>" />
-            				<?php } elseif ($listing_placeholder_image) { ?>
-            					<img src="<?php echo $listing_placeholder_image; ?>" />
-            				<?php } else { ?>
-            					<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
-            				<?php } ?>
-          				</div>
-						<div class="listing-details">
-            						<i class="fa fa-bed"></i> <?php echo $featured_listing_2_num_bedrooms; ?> Bedrooms | 
-							<i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_listing_2_num_bathrooms; ?> Bathrooms | 
-							<i class="fa fa-car"></i> <?php echo $featured_listing_2_num_cars; ?> Cars
-          					</div>
-						<div class="listing-text">
-            						<h4><?php echo $featured_listing_2_title; ?></h4>
-            						<p><?php echo $featured_listing_2_description; ?></p><p class="text-center">
-							<a class="button text-center" src="<?php echo $featured_listing_2_url; ?>">View Listing</a></p>
-         					 </div>
-					</div>
-				<?php } ?>
-			</div>
-			<div class="large-4 columns">&nbsp;
-				<?php if ($featured_listing_3_title) { ?>
-					<div class="listing-box" data-equalizer-watch>
-						<div class="listing-image">
-							<?php if ($featured_listing_3_image_url) { ?>
-            					<img src="<?php echo $featured_listing_3_image_url; ?>" />
-            				<?php } elseif ($listing_placeholder_image) { ?>
-            					<img src="<?php echo $listing_placeholder_image; ?>" />
-            				<?php } else { ?>
-            					<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
-            				<?php } ?>
-          				</div>
-						<div class="listing-details">
-            						<i class="fa fa-bed"></i> <?php echo $featured_listing_3_num_bedrooms; ?> Bedrooms | 
-							<i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_listing_3_num_bathrooms; ?> Bathrooms | 
-							<i class="fa fa-car"></i> <?php echo $featured_listing_3_num_cars; ?> Cars
-          					</div>
-						<div class="listing-text">
-            						<h4><?php echo $featured_listing_3_title; ?></h4>
-            						<p><?php echo $featured_listing_3_description; ?></p><p class="text-center">
-							<a class="button text-center" src="<?php echo $featured_listing_3_url; ?>">View Listing</a></p>
-         				</div>
-					</div>
-				<?php } ?>
-			</div>
-
-	<?php }
-
-
-?>
+			<?php } ?>
+		</div>
+	<?php } ?>
 </section> <!-- listing section -->
 
 
@@ -258,7 +217,7 @@ get_header(); ?>
 	
 	$blog_placeholder_image= get_theme_mod( 'blog_placeholder_image', '' );
  ?>
- <div class="large-4 columns">
+ <div class="large-4 columns">&nbsp;
  	<div class="listing-box" data-equalizer-watch>
  	<div class="listing-image">
  		<?php if ($thumb_url && strpos($thumb_url,'default') === false) { ?>
@@ -268,13 +227,10 @@ get_header(); ?>
  		<?php } else { ?>
  			<p>Upload a featured image to this post or use the Wordpress customizer to add a blog placeholder image.</p>
  		<?php } ?>
- 		
  	</div>
  	<div class="listing-text">
  		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
- 		<p><?php substr(the_content(),50); ?></p>
  		<?php the_content(); ?>
- 		<?php the_excerpt(); ?>
  	</div>
  </div>
  </div>
