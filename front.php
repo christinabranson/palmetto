@@ -16,9 +16,10 @@
 
 get_header(); ?>
 
+
 <!---- Three Pane Feature Functionality ---->
 <section  id="featured_panels">
-<div class="row" data-equalizer>
+<div class="row medium-unstack" data-equalizer>
 <!---- Three Pane Feature Functionality ---->
 <?php
 	$number_of_panes = get_theme_mod( 'number_of_panes', '' );
@@ -41,51 +42,21 @@ get_header(); ?>
 	$pane_text[] = get_theme_mod( 'pane_text_3', '' );
 	$pane_text[] = get_theme_mod( 'pane_text_4', '' );
 
-	if ($number_of_panes !== 0) {
-		if ($number_of_panes == 1) { ?>
-			<?php for ($i=0; $i < 1; $i++) { ?>
-			<div class="large-8 columns large-offset-2">
+	if ($number_of_panes !== 0) { ?>
+			<?php for ($i=0; $i < $number_of_panes; $i++) { ?>
+			<div class="columns">
         			<div class="panel" data-equalizer-watch>
 					<h2 class="text-center"><i class="fa <?php echo $pane_icon[$i]; ?>"></i></h2>
 					<h2 class="text-center"><?php echo $pane_header[$i]; ?></h2>
 					<p><?php echo $pane_text[$i]; ?></p>
 				</div>
 			</div>
-			<?php } ?>
-		<?php } elseif ($number_of_panes == 2) { ?>
-			<?php for ($i=0; $i < 2; $i++) { ?>
-			<div class="large-6 columns">
-        			<div class="panel" data-equalizer-watch>
-					<h2 class="text-center"><i class="fa <?php echo $pane_icon[$i]; ?>"></i></h2>
-					<h2 class="text-center"><?php echo $pane_header[$i]; ?></h2>
-					<p><?php echo $pane_text[$i]; ?></p>
-				</div>
-			</div>
-			<?php } ?>
-		<?php } elseif ($number_of_panes == 3) { ?>
-			<?php for ($i=0; $i < 3; $i++) { ?>
-			<div class="large-4 columns">
-        			<div class="panel" data-equalizer-watch>
-					<h2 class="text-center"><i class="fa <?php echo $pane_icon[$i]; ?>"></i></h2>
-					<h2 class="text-center"><?php echo $pane_header[$i]; ?></h2>
-					<p><?php echo $pane_text[$i]; ?></p>
-				</div>
-			</div>
-			<?php } ?>
-		<?php } elseif ($number_of_panes == 4) { ?>
-			<?php for ($i=0; $i < 4; $i++) { ?>
-			<div class="large-3 columns">
-        			<div class="panel" data-equalizer-watch>
-					<h2 class="text-center"><i class="fa <?php echo $pane_icon[$i]; ?>"></i></h2>
-					<h2 class="text-center"><?php echo $pane_header[$i]; ?></h2>
-					<p><?php echo $pane_text[$i]; ?></p>
-				</div>
-			</div>
-			<?php } ?>
-		<?php }
+			<?php }
 	} ?>
 </div>
 </section> <!-- panel section -->
+
+
 
 <!--- FRONT PAGE SECTION FOR SAMPLE OF LISTINGS -->
 <?php
@@ -134,9 +105,9 @@ get_header(); ?>
       <h2>Featured Listings</h2>
       <p>Some of our featured long-term home rentals. <a href="#">View all listings on our Homes For Rent page.</a></p>
     </div>
-		<div class="row" data-equalizer>
+		<div class="row medium-unstack" data-equalizer>
 			<?php for ($i = 0; $i <= 2; $i++) { ?>
-			<div class="large-4 columns">&nbsp;
+			<div class="columns">&nbsp;
 				<?php if ($featured_listing_title[$i]) { ?>
 					<div class="listing-box" data-equalizer-watch>
 						<div class="listing-image">
@@ -168,7 +139,7 @@ get_header(); ?>
 
 
 <section id="blog">
-<div class="row" data-equalizer>
+<div class="row medium-unstack" data-equalizer>
 <?php
  global $post;
  $myposts = get_posts('numberposts=3');
@@ -182,7 +153,7 @@ get_header(); ?>
 	
 	$blog_placeholder_image= get_theme_mod( 'blog_placeholder_image', '' );
  ?>
- <div class="large-4 columns">&nbsp;
+ <div class="columns">&nbsp;
  	<div class="listing-box" data-equalizer-watch>
  	<div class="listing-image">
  		<?php if ($thumb_url && strpos($thumb_url,'default') === false) { ?>
