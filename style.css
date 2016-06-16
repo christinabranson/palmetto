@@ -109,10 +109,7 @@ li {
 }
 
 .top-bar-right .menu {
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    right: 15%;
+
 }
 
 .top-bar-right-bottom,
@@ -176,6 +173,20 @@ li {
     background: #000;
     box-shadow: 0 7px 0 #000, 0 14px 0 #000;
 }
+
+
+#mobile-menu ul {
+  background: #fff;
+  color: #E85302;
+}
+
+#mobile-menu ul li {
+  background: #fff;
+  padding: 10px 5px;
+}
+
+
+
 
 /* Header */
 

@@ -30,7 +30,8 @@
   body .button { background-color:  <?php echo get_option('body_link_color'); ?>; }
   body a:hover { color:  <?php echo get_option('body_link_hover_color'); ?>; }
   body .button:hover { background-color:  <?php echo get_option('body_link_hover_color'); ?>; }
-  .top-bar ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */git remote set-url origin 
+  .top-bar ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
+  #mobile-menu ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
 </style>
 
 </head>
@@ -99,7 +100,7 @@
 	</div>
 	<!--- TOP NAVIGATION BAR -->
 	
-	<div class="title-bar" data-responsive-toggle="top-nav-bar" data-hide-for="medium">
+	<div class="title-bar" data-responsive-toggle="mobile-menu" data-hide-for="medium">
   		<button class="menu-icon" type="button" data-toggle></button>
   		<div class="title-bar-title">
   			<?php if (has_custom_logo()) { ?>
@@ -110,8 +111,17 @@
   			
   		</div>
 	</div>
+	
+	<div id="mobile-menu" class="hide-for-medium" data-hide-for="medium">
+		<?php wp_nav_menu(array(
+			'menu'   => 'topbar-menu',
+			'menu_class'     => 'menu vertical',
+			'depth'	=> 1,
+			)); ?>
+	</div>
 
-	<div class="top-bar" id="top-nav-bar">
+
+	<div class="top-bar show-for-medium" id="top-nav-bar" data-topbar>
 		<div class="row">
 			<div class="top-bar-left">
 				<li class="menu-text">
@@ -139,7 +149,7 @@
 	<!--- TODO: This should be customizable in Customizr, check https://github.com/WordPress/twentysixteen/blob/master/header.php for implementation -->
 	<!--- SHOW ONLY FOR HOME PAGE -->
 	<?php if ( is_front_page() ) : ?>
-	<?php if ( get_header_image() ) { ?>
+	<?php if ( has_header_image() ) { ?>
 		<header class="front-page" style="background-image: url('<?php header_image(); ?>')";>
 			<div class="featured-property">
 				<div class="row">
