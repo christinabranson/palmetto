@@ -109,7 +109,7 @@ li {
 }
 
 .top-bar-right .menu {
-
+  margin-top: 40px;
 }
 
 .top-bar-right-bottom,
@@ -118,7 +118,11 @@ li {
   vertical-align: middle;
 }
 
-.dropdown.menu> li.is-dropdown-submenu-parent> a::after {
+.menu.medium-horizontal > li {
+  padding: 0px 10px;
+}
+
+.dropdown.menu> li.is-dropdown-submenu-parent> a::after, .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
   display: none;
 }
 
