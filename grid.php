@@ -39,7 +39,7 @@ get_header(); ?>
 				
 				if ($counter % 3 == 0) { ?>
 					</div> <!-- end row -->
-					<div class="row" data-equalizer>
+					<div class="row" data-equalizer style="margin-top:20px;">
 				
 				<?php }
 
