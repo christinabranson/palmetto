@@ -47,6 +47,7 @@ get_header(); ?>
 					<div class="columns <?php if ( ($counter + 1) == sizeof($subpages)) { echo "end";} ?>">
 						<div class="listing-box" data-equalizer-watch>
 							<div class="listing-image">
+									<a href="<?php echo get_page_link( $page->ID ); ?>">
 									<?php if ($thumb_url && strpos($thumb_url,'default') === false) { ?>
             							<img src="<?php echo $thumb_url; ?>" />
             						<?php } elseif ($listing_placeholder_image) { ?>
@@ -54,11 +55,12 @@ get_header(); ?>
             						<?php } else { ?>
             							<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
             						<?php } ?>
+            						</a>
           					</div> <!-- listing image -->
           					<div class="listing-text">
           						<h4><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h4>
           						<p><?php echo $page->post_excerpt;?></p><p class="text-center">
-          						<a class="button text-center" src="<?php echo get_page_link( $page->ID ); ?>">View Listing</a></p>
+          						<a class="button text-center" href="<?php echo get_page_link( $page->ID ); ?>">View Listing</a></p>
           					</div> <!-- listing text -->
 						</div> <!-- listing box -->
 					</div> <!-- subpage column -->

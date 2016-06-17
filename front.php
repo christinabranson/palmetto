@@ -125,9 +125,9 @@ get_header(); ?>
 							<?php if ($featured_listing_num_cars[$i]) { ?><i class="fa fa-car"></i> <?php echo $featured_listing_num_cars[$i]; ?> Cars <?php } ?>
           					</div>
 						<div class="listing-text">
-            						<h4><?php echo $featured_listing_title[$i]; ?></h4>
+            						<h4><a href="<?php echo $featured_listing_url[$i]; ?>"><?php echo $featured_listing_title[$i]; ?></a></h4>
             						<p><?php echo $featured_listing_description[$i]; ?></p><p class="text-center">
-							<a class="button text-center" src="<?php echo $featured_listing_url[$i]; ?>">View Listing</a></p>
+							<a class="button text-center" href="<?php echo $featured_listing_url[$i]; ?>">View Listing</a></p>
          				</div>
 					</div>
 				<?php } ?>
@@ -167,6 +167,7 @@ get_header(); ?>
  	<div class="listing-text">
  		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
  		<?php the_content(); ?>
+ 		<a class="button text-center" href="<?php the_permalink(); ?>">View Post</a></p>
  	</div>
  </div>
  </div>
