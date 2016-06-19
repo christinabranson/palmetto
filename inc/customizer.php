@@ -772,7 +772,6 @@ $wp_customize->add_control(
             'section'        => 'placeholder_images',
             'settings'       => 'listing_placeholder_image',
 		    'type'       => 'text',
-
             )
         )
     );
@@ -788,10 +787,114 @@ $wp_customize->add_control(
             'section'        => 'placeholder_images',
             'settings'       => 'blog_placeholder_image',
 		    'type'       => 'text',
-
             )
         )
     );
+    
+    
+/*
+	Featured Property Header
+*/
+$wp_customize->add_section('featured_property_header' , array(
+  'title' => __('Featured Property Header','foundation'), 'description' => 'Add property information for featured property background header.',
+  'description' => __('Add property information for featured property background header. This is used with the custom header image.', 'foundation'),
+));
+
+$wp_customize->add_setting('featured_property_pre_text', array('default' => 'Featured Property'));
+
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_property_pre_text',
+        array(
+            'label'          => __( 'Featured Property: Previous Text', 'foundation' ),
+            'section'        => 'featured_property_header',
+            'settings'       => 'featured_property_pre_text',
+		    'type'       => 'text',
+            )
+        )
+    );
+    
+$wp_customize->add_setting('featured_property_property_header', array('default' => ''));
+
+   $wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_property_property_header',
+        array(
+            'label'          => __( 'Featured Property: Property Name', 'foundation' ),
+            'section'        => 'featured_property_header',
+            'settings'       => 'featured_property_property_header',
+		    'type'       => 'text',
+            )
+        )
+    );
+    
+  $wp_customize->add_setting('featured_property_number_bedrooms', array('default' => ''));  
+  
+  
+   $wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_property_number_bedrooms',
+        array(
+            'label'          => __( 'Featured Property: Number Of Bedrooms', 'foundation' ),
+            'section'        => 'featured_property_header',
+            'settings'       => 'featured_property_number_bedrooms',
+		    'type'       => 'text',
+            )
+        )
+    );
+    
+    
+    $wp_customize->add_setting('featured_property_number_bathrooms', array('default' => ''));  
+  
+  
+   $wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_property_number_bathrooms',
+        array(
+            'label'          => __( 'Featured Property: Number of Bathrooms', 'foundation' ),
+            'section'        => 'featured_property_header',
+            'settings'       => 'featured_property_number_bathrooms',
+		    'type'       => 'text',
+            )
+        )
+    );
+    
+       $wp_customize->add_setting('featured_property_number_cars', array('default' => ''));  
+  
+  
+   $wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_property_number_cars',
+        array(
+            'label'          => __( 'Featured Property: Number of Cars', 'foundation' ),
+            'section'        => 'featured_property_header',
+            'settings'       => 'featured_property_number_cars',
+		    'type'       => 'text',
+            )
+        )
+    ); 
+    
+    
+           $wp_customize->add_setting('featured_property_listing_url', array('default' => ''));  
+  
+  
+   $wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        	'featured_property_listing_url',
+        array(
+            'label'          => __( 'Featured Property: Listing URL', 'foundation' ),
+            'section'        => 'featured_property_header',
+            'settings'       => 'featured_property_listing_url',
+		    'type'       => 'text',
+            )
+        )
+    );   
 
 }
 add_action( 'customize_register', 'foundation_customize_register' );

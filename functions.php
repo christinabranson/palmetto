@@ -32,8 +32,6 @@ function foundation_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
-	
-	
 
 	/*
 	 * Enable support for custom logo.
@@ -56,8 +54,7 @@ function foundation_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
 
-// TODO: Determine how many navigation menus we need
-// Definitely one for the top navigation menu
+
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'foundation' ),
@@ -69,7 +66,6 @@ function foundation_setup() {
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-// Dunno yet
 	add_theme_support( 'html5', array(
 		'search-form',
 		'comment-form',
@@ -94,12 +90,6 @@ function foundation_setup() {
 		'audio',
 		'chat',
 	) );
-
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	//add_editor_style( array( 'css/editor-style.css', foundation_fonts_url() ) );
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -132,18 +122,16 @@ add_action( 'after_setup_theme', 'foundation_content_width', 0 );
 
 /* NAVIGATION MENU FOR FOUNDATION */
 function foundation_nav_menu() {
-
-					wp_nav_menu(array(
-	    				'container' => false,
-	    				'menu' => __( 'Top Bar Menu', 'foundation' ),
-	    				'menu_class' => 'dropdown menu',
-	    				//'theme_location' => 'topbar-menu',
-	    				'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
-	    				//Recommend setting this to false, but if you need a fallback...
-	    				'fallback_cb' => 'f6_topbar_menu_fallback',
-	        			'walker' => new F6_TOPBAR_MENU_WALKER(),
-					));
-
+	wp_nav_menu(array(
+		'container' => false,
+		'menu' => __( 'Top Bar Menu', 'foundation' ),
+		'menu_class' => 'dropdown menu',
+		//'theme_location' => 'topbar-menu',
+		'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+		//Recommend setting this to false, but if you need a fallback...
+		'fallback_cb' => 'f6_topbar_menu_fallback',
+		'walker' => new F6_TOPBAR_MENU_WALKER(),
+	));
 }
 
 
@@ -277,7 +265,6 @@ function foundation_widgets_init() {
 	) );
 
 
-
 	register_sidebar( array(
 		'name'          => __( 'Sidebar - Page', 'foundation' ),
 		'id'            => 'sidebar-page',
@@ -323,13 +310,13 @@ function foundation_scripts() {
 
 	/* Add our fonts */
 	// <link href='https://fonts.googleapis.com/css?family=Cantarell:400,400italic,700,700italic|Fjalla+One' rel='stylesheet' type='text/css'>
-        wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Cantarell:400,400italic,700,700italic|Fjalla+One');
-        wp_enqueue_style( 'googleFonts');
+    wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Cantarell:400,400italic,700,700italic|Fjalla+One');
+    wp_enqueue_style( 'googleFonts');
 
 	// Add Font Awesome
 	// https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
-        wp_register_style('fontAwesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
-        wp_enqueue_style( 'fontAwesome');
+    wp_register_style('fontAwesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+    wp_enqueue_style( 'fontAwesome');
 
 	/* Add Foundation CSS */
 	wp_enqueue_style( 'foundation-normalize', get_stylesheet_directory_uri() . '/foundation/css/normalize.css' );
@@ -354,8 +341,6 @@ $args = array(
 	'height'        => 1200,
 );
 add_theme_support( 'custom-header', $args );
-
-
 
 /**
  * Adds custom classes to the array of body classes.
