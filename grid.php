@@ -39,12 +39,12 @@ get_header(); ?>
 				
 				if ($counter % 3 == 0) { ?>
 					</div> <!-- end row -->
-					<div class="row medium-unstack" data-equalizer style="margin-top:20px;">
+					<div class="row" data-equalizer style="margin-top:20px;">
 				
 				<?php }
 
 				?>
-					<div class="columns <?php if ( ($counter + 1) == sizeof($subpages)) { echo "end";} ?>">
+					<div class="large-4 columns <?php if ( ($counter + 1) == sizeof($subpages)) { echo "end";} ?>">
 						<div class="listing-box" data-equalizer-watch>
 							<div class="listing-image">
 									<a href="<?php echo get_page_link( $page->ID ); ?>">

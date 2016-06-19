@@ -12,17 +12,17 @@ if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' )  &
 // If we get this far, we have widgets. Let's do this.
 ?>
 <div class="row medium-unstack">
-	<div class="columns">
+	<div class="large-4 columns">
 	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 			<?php dynamic_sidebar( 'sidebar-2' ); ?>
 	<?php endif; ?>
 	</div>
-	<div class="columns">
+	<div class="large-4 columns">
 	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
 			<?php dynamic_sidebar( 'sidebar-3' ); ?>
 	<?php endif; ?>
 	</div>
-	<div class="columns">
+	<div class="large-4 columns">
 	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
 			<?php dynamic_sidebar( 'sidebar-4' ); ?>
 	<?php endif; ?>	

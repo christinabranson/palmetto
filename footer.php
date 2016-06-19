@@ -17,7 +17,7 @@
 		</div>
 		<div class="row text-center">
 			<!--- SOCIAL MEDIA OPTIONS -->
-			<div class="columns"><h3>
+			<h3>
 				<!--- FACEBOOK -->
 				<?php
 					$facebook_url = get_theme_mod( 'facebook_url', '' );
@@ -54,7 +54,7 @@
 					if ($github_url) { ?>
 						<a href="<?php echo $github_url; ?>"><i class="fa fa-github"></i></a>
 				<?php } ?>
-			</h3></div>
+			</h3>
 		</div>
 		<div class="row text-center">
 			Powered by <a href="https://wordpress.org" target="_new">Wordpress</a>. <a href="http://christinabranson.github.io/palmetto">Palmetto Wordpress Theme</a> by <a href="http://christinabranson.github.io">Christina Branson</a>.

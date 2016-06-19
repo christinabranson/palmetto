@@ -43,7 +43,7 @@
 	<!--- ABOVE NAVIGATION MENU FOR CONTACT & SOCIAL MEDIA -->
 	<div class="row above-nav">
 		<!--- CONTACT HEADER -->
-		<div class="shrink columns">
+		<div class="small-12 large-3 columns">
 			<!--- PHONE NUMBER -->
 			<?php
 				$phone = get_theme_mod( 'phone_number', '' );
@@ -51,7 +51,7 @@
 					<i class="fa fa-phone"></i> <?php echo $phone; ?>
 			<?php } ?>
 		</div>
-		<div class="shrink columns">
+		<div class="small-12 large-3 columns">
 			<!--- EMAIL ADDRESS -->
 			<?php
 				$email = get_theme_mod( 'email_address', '' );
@@ -60,7 +60,7 @@
 			<?php } ?>
 		</div>
 		<!--- SOCIAL MEDIA OPTIONS -->
-		<div class="columns text-right show-for-medium">
+		<div class="large-6 columns text-right show-for-medium">
 			<!--- FACEBOOK -->
 			<?php
 				$facebook_url = get_theme_mod( 'facebook_url', '' );
