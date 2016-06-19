@@ -22,7 +22,7 @@ function foundation_entry_meta() {
 
 function foundation_meta_get_author() {
 	printf(
-		'<i class="fa fa-user"></i> <a href="%1s" rel="author">%2s</a>',
+		'<i class="fa fa-user"></i> <a href="%1s" rel="author"><span itemprop="author">%2s</span></a>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		get_the_author()
 		);
@@ -30,7 +30,7 @@ function foundation_meta_get_author() {
 
 function foundation_meta_get_postdate() {
 	printf(
-		'<i class="fa fa-calendar"></i> <a href="%1s" rel="author">%2s</a>',
+		'<i class="fa fa-calendar"></i> <a href="%1s" rel="date" ><span itemprop="datePublished">%2s</span></a>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		get_the_date()
 		);
@@ -51,110 +51,6 @@ function foundation_meta_edit() {
 	}
 }
 
-if ( ! function_exists( 'foundation_entry_meta' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags.
- *
- * Create your own foundation_entry_meta() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
-
-/*
-<div class="meta"><i class="fa fa-pencil"></i><a href="#">Christina Branson</a> <i class="fa fa-calendar"></i> May 22, 2016 <i class="fa fa-folder-open-o"></i> <a href="">News</a>, <a href="">Personal</a></div>
-*/
-
-function foundation_entry_meta() {
-	if ( 'post' === get_post_type() ) {
-		$author_avatar_size = apply_filters( 'foundation_author_avatar_size', 28 );
-		printf( '<div class="meta">  %1$s <a class="url fn n" href="%2$s">  %3$s  </a>',
-			_x( '<i class="fa fa-pencil"></i> ', 'Used before post author name.', 'foundation' ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			get_the_author()
-		);
-	}
-
-	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-		foundation_entry_date();
-	}
-
-	$format = get_post_format();
-	if ( current_theme_supports( 'post-formats', $format ) ) {
-		printf( '| %1$s<a href="%2$s">%3$s</a> |',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'foundation' ) ),
-			esc_url( get_post_format_link( $format ) ),
-			get_post_format_string( $format )
-		);
-	}
-
-	if ( 'post' === get_post_type() ) {
-		foundation_entry_taxonomies();
-	}
-
-	if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'foundation' ), get_the_title() ) );
-		echo '</span>';
-	}
-}
-endif;
-
-if ( ! function_exists( 'foundation_entry_date' ) ) :
-/**
- * Prints HTML with date information for current post.
- *
- * Create your own foundation_entry_date() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
-function foundation_entry_date() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		get_the_date(),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		get_the_modified_date()
-	);
-
-	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-		_x( 'Posted on', 'Used before publish date.', 'foundation' ),
-		esc_url( get_permalink() ),
-		$time_string
-	);
-}
-endif;
-
-if ( ! function_exists( 'foundation_entry_taxonomies' ) ) :
-/**
- * Prints HTML with category and tags for current post.
- *
- * Create your own foundation_entry_taxonomies() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
-function foundation_entry_taxonomies() {
-	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'foundation' ) );
-	if ( $categories_list && foundation_categorized_blog() ) {
-		printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-			_x( 'Categories', 'Used before category names.', 'foundation' ),
-			$categories_list
-		);
-	}
-
-	$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'foundation' ) );
-	if ( $tags_list ) {
-		printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-			_x( 'Tags', 'Used before tag names.', 'foundation' ),
-			$tags_list
-		);
-	}
-}
-endif;
 
 if ( ! function_exists( 'foundation_post_thumbnail' ) ) :
 /**
@@ -165,7 +61,7 @@ if ( ! function_exists( 'foundation_post_thumbnail' ) ) :
  *
  * Create your own foundation_post_thumbnail() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since Real Estate 0.1
  */
 function foundation_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {

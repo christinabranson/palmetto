@@ -48,3 +48,5 @@ The theme comes with multiple built-in customizer options.
 * Figure out how to preserve meta data for featured images
 * Add functionality to replace logo with site text and description if no logo
 * Add front page featured property
+* Instead of using the custom logo instead of featured, hardcode a default.
+* Perform if checks for number of bedrooms, bathrooms, and garages on front page

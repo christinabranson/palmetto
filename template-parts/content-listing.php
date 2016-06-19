@@ -76,7 +76,7 @@ for ($i=1; $i <= 10; $i++) {
 					<?php } ?>
 
 					<?php if ( get_field('number_of_bathrooms') ) { ?>
-						<p><i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo get_field('number_of_bedrooms'); ?> Bathrooms</p>
+						<p><i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo get_field('number_of_bathrooms'); ?> Bathrooms</p>
 					<?php } ?>
 
 					<?php if ( get_field('number_of_cars') ) { ?>
