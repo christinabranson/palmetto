@@ -7,7 +7,7 @@
  * @since Palmetto 0.1
  */
 ?>
-<p>content.php</p>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype ="http://schema.org/BlogPost">
 
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>

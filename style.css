@@ -1,8 +1,8 @@
 /*
-Theme Name: Real Estate Theme
-Theme URI: https://christinabranson.com
+Theme Name: Palmetto
+Theme URI: https://christinabranson.github.io/palmetto
 Author: Christina Brason
-Author URI: https://christinabranson.com
+Author URI: https://christinabranson.github.io
 Description: Wordpress theme designed for Bluffton Homes 4 Rent
 Version: 0.1
 
@@ -197,7 +197,10 @@ li {
 
 header {
   margin: 0px 0px 20px 0px;
-  background: #000 url('http://blufftonhomes4rent.com/wp-content/uploads/2015/11/cropped-Front-Landscape.jpg') no-repeat center center scroll;
+  background: #ccc;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -300,6 +303,15 @@ figure .caption {
   text-indent: 10px;
 }
 
+#blog ul {
+  margin: 20px;
+  padding: 5px;
+}
+
+#blog li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
 
 /* Listing Section */
 

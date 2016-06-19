@@ -26,8 +26,8 @@
 	}
  ?>
  
-<div class="row" id="blog">
-	<div class="large-8 columns"  itemscope itemtype ="http://schema.org/BlogPost">
+<div class="row">
+	<div class="large-8 columns" id="blog" itemscope itemtype ="http://schema.org/BlogPost">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
 

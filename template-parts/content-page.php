@@ -29,7 +29,7 @@
 <section id="post">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="row">
-			<div class="large-12 columns">
+			<div class="large-12 columns"  id="blog">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				<?php foundation_meta_edit(); ?>
 				<div class="entry-content">

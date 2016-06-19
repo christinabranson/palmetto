@@ -3,15 +3,16 @@
  * The template part for displaying a message that posts cannot be found
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 ?>
 
+<p>content-none</p>
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'foundation' ); ?></h1>
-	</header><!-- .page-header -->
+
+	<h1 class="page-title"><?php _e( 'Nothing Found', 'foundation' ); ?></h1>
+
 
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
