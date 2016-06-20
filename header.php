@@ -158,7 +158,7 @@
 										   <?php if ($featured_name) { echo $featured_name; } ?></span><br/>
 					<span class="featured-sub">
 						<?php if ($featured_num_bedrooms) { ?><i class="fa fa-bed"></i> <?php echo $featured_num_bedrooms; ?> Bedrooms | <?php } ?>
-						<?php if ($featured_num_bathrooms) { ?><i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_num_bathrooms; ?> Bathrooms | <?php } ?>
+						<?php if ($featured_num_bathrooms) { ?><i class="fa fa-shower"></i> <?php echo $featured_num_bathrooms; ?> Bathrooms | <?php } ?>
 						<?php if ($featured_num_cars) { ?><i class="fa fa-car"></i> <?php echo $featured_num_cars; ?> Car | <?php } ?>
 						<?php if ($featured_url) { ?><a href="<?php echo $featured_url; ?>">View Listing</a></span> <?php } ?>
 					</div>

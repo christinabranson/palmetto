@@ -317,6 +317,10 @@ function foundation_scripts() {
 	// https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
     wp_register_style('fontAwesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
     wp_enqueue_style( 'fontAwesome');
+    
+    // Add Custom Fonts
+    wp_enqueue_style( 'fontAwesome-custom', get_template_directory_uri() . '/assets/custom-font-icons/custom-font-icons.css' );
+    wp_enqueue_style( 'fontAwesome-custom');
 
 	/* Add Foundation CSS */
 	wp_enqueue_style( 'foundation-normalize', get_stylesheet_directory_uri() . '/foundation/css/normalize.css' );

@@ -150,7 +150,7 @@ get_header(); ?>
           				</div>
 						<div class="listing-details">
             				<?php if ($featured_listing_num_bedrooms[$i]) { ?><i class="fa fa-bed"></i> <?php echo $featured_listing_num_bedrooms[$i]; ?> Bedrooms | <?php } ?>
-							<?php if ($featured_listing_num_bathrooms[$i]) { ?><i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_listing_num_bathrooms[$i]; ?> Bathrooms | <?php } ?>
+							<?php if ($featured_listing_num_bathrooms[$i]) { ?><i class="fa fa-shower"></i> <?php echo $featured_listing_num_bathrooms[$i]; ?> Bathrooms | <?php } ?>
 							<?php if ($featured_listing_num_cars[$i]) { ?><i class="fa fa-car"></i> <?php echo $featured_listing_num_cars[$i]; ?> Cars <?php } ?>
           					</div>
 						<div class="listing-text">
