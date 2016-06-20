@@ -1,0 +1,416 @@
+/*
+Theme Name: Palmetto
+Theme URI: https://christinabranson.github.io/palmetto
+Author: Christina Brason
+Author URI: https://christinabranson.github.io
+Description: Wordpress theme designed for Bluffton Homes 4 Rent
+Version: 0.1
+
+This theme is based on a design located: http://s.codepen.io/christinabranson/debug/QEWaVy
+
+Schemas to implement:
+http://schema.org/PostalAddress
+http://schema.org/SingleFamilyResidence
+http://schema.org/Place
+http://schema.org/Offer
+
+
+*/
+
+
+/* General Settings */
+
+body {
+  background: #eee;
+  font-family: 'Cantarell', sans-serif;
+}
+
+.row,
+.columns {
+  font-family: 'Cantarell', sans-serif;
+}
+
+a {
+  color: #E85302;
+}
+
+a:hover {
+  color: #FEBD00;
+}
+
+.button {
+  background-color: #E85302;
+}
+
+.button:hover {
+  background-color: #FEBD00;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fjalla One';
+}
+
+.row {
+  max-width: 1200px;
+}
+
+section {
+  margin: 15px 0px;
+  padding: 15px 0px;
+}
+
+.white-section {
+  background: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+/* Nav Bar Settings */
+
+.above-nav {
+  padding: 10px 0px 10px 0px;
+}
+
+.above-nav i {
+  margin-left: 20px;
+}
+
+.top-bar {
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+  font-size: 1.25em;
+  position: relative;
+}
+
+.top-bar,
+.top-bar-left,
+.top-bar-right,
+.top-bar ul {
+  background: #fff;
+  vertical-align: middle;
+  color: #E85302;
+}
+
+.top-bar-right .menu {
+  margin-top: 40px;
+}
+
+.top-bar-right-bottom,
+.top-bar-right-bottom ul {
+  background: #fff;
+  vertical-align: middle;
+}
+
+.menu.medium-horizontal > li {
+  padding: 0px 10px;
+}
+
+.dropdown.menu> li.is-dropdown-submenu-parent> a::after, .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
+  display: none;
+}
+
+.dropdown.menu> li.is-dropdown-submenu-parent> a,
+.menu> li> a {
+  vertical-align: middle;
+  display: inline;
+  font-family: 'Cantarell', sans-serif;
+  margin-left: 10px;
+}
+
+.dropdown.menu > li.opens-left > .is-dropdown-submenu {
+    left: auto;
+    right: 0;
+    top: 0;
+    border: 0px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 300px;
+    padding: 0px 10px 10px 10px;
+}
+
+.menu.vertical > li {
+    display: block;
+    padding: 10px;
+}
+
+.menu.vertical > li:hover {
+    background: #E85302;
+}
+
+.menu.vertical > li:hover > a, .menu.vertical > li:hover {
+    color: #fff;
+}
+
+.sub-menu-link {
+  font-family: 'Cantarell', sans-serif;
+}
+
+.top-bar-logo {
+  max-width: 200px;
+  vertical-align: middle;
+}
+
+.custom-logo {
+  max-width: 200px;
+}
+
+.top-social-media-icons i {
+  display: inline-block;
+  float: left;
+  padding: 0px;
+  margin: 0px 5px;
+}
+
+.menu-text {
+  font-weight: normal;
+}
+
+.title-bar {
+  background: #fff;
+  align: center;
+}
+
+.title-bar img {
+  max-width: 100px;
+  float: center;
+}
+
+.menu-icon {
+    display: inline-block;
+    color: #000;
+}
+
+.menu-icon::after, .menu-icon:hover::after {
+    background: #000;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+}
+
+
+#mobile-menu ul {
+  background: #fff;
+  color: #E85302;
+}
+
+#mobile-menu ul li {
+  background: #fff;
+  padding: 10px 5px;
+}
+
+
+
+
+/* Header */
+
+
+/* If front page, show large header */
+
+header {
+  margin: 0px 0px 20px 0px;
+  background: #ccc;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  min-height: 450px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.featured-property {
+  position: relative;
+  margin-top: 20px;
+  display: block;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.featured {
+  padding: 0px;
+  font-size: 3em;
+  font-family: 'Fjalla One';
+}
+
+.featured-sub {
+  font-size: 1.25em;
+  font-family: 'Cantarell';
+}
+
+.featured-sub a {
+  color: #fff;
+}
+
+
+/* If not front page, show featured image slightly smaller */
+
+header .standard-page {}
+
+
+/* Three section panels */
+
+.panel {
+  margin: 5px 5px;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Footer */
+
+footer {
+  background: #fff;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+
+/* Blog Section */
+
+#blog {
+  margin-top: 20px;
+}
+
+#blog h2, #blog h3 {
+  margin-top: 10px;
+}
+
+
+#blog .meta {
+  font-size: .8em;
+  padding: 10px;
+}
+
+#blog .meta a {
+  color: #000;
+}
+
+#blog .meta i {
+  padding: 1px 5px 1px 10px;
+}
+
+.meta i {
+  padding: 1px 5px 1px 10px;
+}
+
+#blog figure,
+figure {
+  max-width: 100%;
+  background: #fff;
+  padding: 10px 10px 0px 10px;
+  margin: 20px 0px;
+  border: 1px solid #ccc;
+}
+
+#blog figure .caption,
+figure .caption {
+  font-size: .8em;
+  font-style: italic;
+}
+
+#blog p {
+  text-indent: 10px;
+}
+
+#blog ul {
+  margin: 20px;
+  padding: 5px;
+}
+
+#blog li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Listing Section */
+
+.listing-box {
+  margin: 5px 5px;
+  padding: 0px;
+  background: #fff;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.listing-image {
+  padding: 0px;
+  background: #fff;
+  min-height: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.listing-image img {
+  max-height: 100%;
+  max-width: auto;
+  height: 300px;
+  width: 100%;
+}
+
+.listing-text {
+  padding: 10px;
+  background: #fff;
+}
+
+.listing-details {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 10px;
+  font-size: 0.9em;
+  border-bottom: 1px #ccc solid;
+}
+
+
+/* Listings */
+
+#listing h2 {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #000;
+}
+
+#listing .orbit {
+  min-height: 400px;
+  max-height: 400px;
+}
+
+#listing .orbit li {
+  min-height: 400px;
+  max-height: 400px;
+}
+
+
+/* Sidebars */
+
+.sidebar section {
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
+
+
+/* Etc */
+
+.icon-rotate-90 {
+  transform: rotate(270deg);
+}
+
+.pagepanel {
+  margin: 20px 0px;
+  padding: 0px 50px;
+}
