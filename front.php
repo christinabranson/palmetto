@@ -145,7 +145,7 @@ get_header(); ?>
             				<?php } elseif ($listing_placeholder_image) { ?>
             					<img src="<?php echo $listing_placeholder_image; ?>" />
             				<?php } else { ?>
-            					<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
+            					<img src="<?php echo get_template_directory_uri() . '/assets/img/dft-placeholder-listing.jpg'; ?>" />
             				<?php } ?>
           				</div>
 						<div class="listing-details">
@@ -193,7 +193,7 @@ get_header(); ?>
  		<?php } elseif ($blog_placeholder_image) { ?>
  			<img src="<?php echo $blog_placeholder_image; ?>" />
  		<?php } else { ?>
- 			<p>Upload a featured image to this post or use the Wordpress customizer to add a blog placeholder image.</p>
+ 			<img src="<?php echo get_template_directory_uri() . '/assets/img/dft-placeholder-blog.jpg'; ?>" />
  		<?php } ?>
  	</div>
  	<div class="listing-text">
