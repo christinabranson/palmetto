@@ -19,14 +19,9 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'search' );
 			// End the loop.
 			endwhile;
-
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'foundation' ),
-				'next_text'          => __( 'Next page', 'foundation' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'foundation' ) . ' </span>',
-			) );
-
+		?>
+		<?php foundation_pagination();	?>
+	<?php
 		// If no content, include the "No posts found" template.
 		else :
 			get_template_part( 'template-parts/content', 'none' );

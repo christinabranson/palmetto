@@ -411,3 +411,51 @@ require get_template_directory() . '/inc/template-tags.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+
+
+/* Foundation Pagination */
+function foundation_pagination($arrows = true, $ends = true, $pages = 2)
+{
+    if (is_singular()) return;
+
+    global $wp_query, $paged;
+    $pagination = '';
+
+    $max_page = $wp_query->max_num_pages;
+    if ($max_page == 1) return;
+    if (empty($paged)) $paged = 1;
+
+    if ($arrows) $pagination .= foundation_pagination_link($paged - 1, 'arrow' . (($paged <= 1) ? ' unavailable disabled' : ''), '&laquo; Previous', 'Previous Page', (($paged <= 1) ? 'true' : ''));
+    if ($ends && $paged > $pages + 1) $pagination .= foundation_pagination_link(1);
+    if ($ends && $paged > $pages + 2) $pagination .= foundation_pagination_link(1, 'unavailable disabled', '&hellip;', 'ellipsis', 'true');
+    for ($i = $paged - $pages; $i <= $paged + $pages; $i++) {
+        if ($i > 0 && $i <= $max_page)
+            $pagination .= foundation_pagination_link($i, ($i == $paged) ? 'current' : '');
+    }
+    if ($ends && $paged < $max_page - $pages - 1) $pagination .= foundation_pagination_link($max_page, 'unavailable disabled', '&hellip;', 'ellipsis','true');
+    if ($ends && $paged < $max_page - $pages) $pagination .= foundation_pagination_link($max_page);
+
+    if ($arrows) $pagination .= foundation_pagination_link($paged + 1, 'arrow' . (($paged >= $max_page) ? ' unavailable disabled' : ''), 'Next &raquo;', 'Next Page', (($paged >= $max_page) ? 'true' : ''));
+
+    $pagination = '<ul class="pagination" role="navigation" aria-label="Pagination">' . $pagination . '</ul>';
+    $pagination = '<nav class="pagination-centered">' . $pagination . '</nav>';
+
+    echo $pagination;
+}
+
+function foundation_pagination_link($page, $class = '', $content = '', $title = '', $aria = '')
+{
+    $href = (strrpos($class, 'unavailable') === false && strrpos($class, 'current') === false) ? get_pagenum_link($page) : "#$id";
+
+    $aria = empty($aria) ? $aria : " aria-disabled=\"$aria\"";
+    $class = empty($class) ? $class : " class=\"$class\"";
+    $content = !empty($content) ? $content : $page;
+    $title = !empty($title) ? $title : 'Page ' . $page;
+    
+	if (strrpos($class, 'unavailable') === false)
+    	return "<li $class $aria><a href=\"$href\" title=\"$title\">$content</a></li>\n";
+    else 
+    	return "<li $class $aria>$content</li>\n";
+    
+}

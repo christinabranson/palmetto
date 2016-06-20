@@ -36,11 +36,7 @@ get_header(); ?>
 			endwhile;
 
 			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'foundation' ),
-				'next_text'          => __( 'Next page', 'foundation' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'foundation' ) . ' </span>',
-			) );
+			foundation_pagination();
 
 		// If no content, include the "No posts found" template.
 		else :

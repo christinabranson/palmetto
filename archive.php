@@ -18,7 +18,7 @@
 
 get_header(); ?>
 <div class="row">
-	<div class="large-8 columns">
+	<div class="large-8 columns" id="blog">
 		<?php if ( have_posts() ) : ?>
 			<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -40,11 +40,7 @@ get_header(); ?>
 			endwhile;
 
 			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'foundation' ),
-				'next_text'          => __( 'Next page', 'foundation' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'foundation' ) . ' </span>',
-			) );
+			foundation_pagination();
 
 		// If no content, include the "No posts found" template.
 		else :
