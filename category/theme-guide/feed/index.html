@@ -12,7 +12,7 @@
 	<atom:link href="https://wordpress-dev-chrissybranso.c9users.io/category/theme-guide/feed/" rel="self" type="application/rss+xml" />
 	<link>https://wordpress-dev-chrissybranso.c9users.io</link>
 	<description>Palmetto is a WordPress theme designed specifically for real estate and rental agencies. It features modules on the home page designed to showcase featured listings. It also has a number of custom page templates, including a listing template to showcase property information.</description>
-	<lastBuildDate>Mon, 20 Jun 2016 22:09:02 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 20 Jun 2016 22:57:55 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -258,7 +258,7 @@
 <li><code>number_of_bathrooms</code></li>
 <li><code>number_of_cars</code></li>
 <li><code>availability</code></li>
-<li><code>contact_information</code></li>
+<li><code>contact_link</code></li>
 </ul>
 <h3>Gallery Images</h3>
 <p>If you&#8217;d like to use Advanced Custom Fields to display an Orbit slider to display images on the Listing Template, you should have the following fields. <a href="https://wordpress-dev-chrissybranso.c9users.io/listing-images/">Note that there are several available options for this task</a>. </p>
@@ -277,9 +277,10 @@
 		'fields' => array (<br />
 			array (<br />
 				'key' => 'field_5751ac42f64a3',<br />
-				'label' => 'Monthly Rent',<br />
+				'label' => 'Cost',<br />
 				'name' => 'monthly_rent',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Cost or monthly rent of the listing',<br />
 				'required' => 1,<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
@@ -293,6 +294,7 @@
 				'label' => 'Number of Bedrooms',<br />
 				'name' => 'number_of_bedrooms',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Number of bedrooms for the listing',<br />
 				'required' => 1,<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
@@ -306,6 +308,7 @@
 				'label' => 'Number of Bathrooms',<br />
 				'name' => 'number_of_bathrooms',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Number of bathrooms for the listing',<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
 				'prepend' => '',<br />
@@ -318,6 +321,7 @@
 				'label' => 'Number of Cars',<br />
 				'name' => 'number_of_cars',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Number of car garage spaces for the listing',<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
 				'prepend' => '',<br />
@@ -330,6 +334,7 @@
 				'label' => 'Availability',<br />
 				'name' => 'availability',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Enter availability of the listing.',<br />
 				'required' => 1,<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
@@ -340,28 +345,16 @@
 			),<br />
 			array (<br />
 				'key' => 'field_576861bd8a65c',<br />
-				'label' => 'Contact Information',<br />
-				'name' => 'contact_information',<br />
-				'type' => 'text',<br />
+				'label' => 'Contact Link',<br />
+				'name' => 'contact_link',<br />
+				'type' => 'page_link',<br />
+				'instructions' => 'Provide a link to your contact page.',<br />
 				'required' => 1,<br />
-				'default_value' => '',<br />
-				'placeholder' => '',<br />
-				'prepend' => '',<br />
-				'append' => '',<br />
-				'formatting' => 'html',<br />
-				'maxlength' => '',<br />
-			),<br />
-			array (<br />
-				'key' => 'field_576861d28a65d',<br />
-				'label' => '',<br />
-				'name' => '',<br />
-				'type' => 'text',<br />
-				'default_value' => '',<br />
-				'placeholder' => '',<br />
-				'prepend' => '',<br />
-				'append' => '',<br />
-				'formatting' => 'html',<br />
-				'maxlength' => '',<br />
+				'post_type' => array (<br />
+					0 => 'all',<br />
+				),<br />
+				'allow_null' => 0,<br />
+				'multiple' => 0,<br />
 			),<br />
 		),<br />
 		'location' => array (<br />

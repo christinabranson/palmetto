@@ -20,8 +20,8 @@
 <meta property="og:site_name" content="Palmetto" />
 <meta property="article:section" content="Howto" />
 <meta property="article:published_time" content="2016-06-20T16:36:13+00:00" />
-<meta property="article:modified_time" content="2016-06-20T21:43:03+00:00" />
-<meta property="og:updated_time" content="2016-06-20T21:43:03+00:00" />
+<meta property="article:modified_time" content="2016-06-20T22:57:55+00:00" />
+<meta property="og:updated_time" content="2016-06-20T22:57:55+00:00" />
 <meta property="og:image" content="http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/Untitled-design-1024x768.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="The Listing Page Template currently relies on the plugin Advanced Custom Fields to supply information for the Property Information sidebar within the template. Property information like cost or monthly rent and the number of bedrooms, bathrooms, and garage spaces. Listing Information In order to use this plugin, specific fields must be specified for the information &hellip; Continue reading &quot;Using Advanced Custom Fields&quot;" />
@@ -49,6 +49,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+<link rel='stylesheet' id='pc_google_analytics-frontend-css'  href='http://christinabranson.github.io/palmetto/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all' />
 <link rel='stylesheet' id='googleFonts-css'  href='https://fonts.googleapis.com/css?family=Cantarell%3A400%2C400italic%2C700%2C700italic%7CFjalla+One&#038;ver=4.5.2' type='text/css' media='all' />
 <link rel='stylesheet' id='fontAwesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css?ver=4.5.2' type='text/css' media='all' />
 <link rel='stylesheet' id='fontAwesome-custom-css'  href='http://christinabranson.github.io/palmetto/wp-content/themes/realestate/assets/custom-font-icons/custom-font-icons.css?ver=4.5.2' type='text/css' media='all' />
@@ -58,6 +59,7 @@ img.emoji {
 <link rel='stylesheet' id='ssp-flexslider-css-css'  href='http://christinabranson.github.io/palmetto/wp-content/plugins/simple-slider-ssp/views/ssp_skins/default/lib/flexslider.css?ver=1.4' type='text/css' media='all' />
 <script type='text/javascript' src='http://christinabranson.github.io/palmetto/wp-includes/js/jquery/jquery.js?ver=1.12.3'></script>
 <script type='text/javascript' src='http://christinabranson.github.io/palmetto/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.0'></script>
+<script type='text/javascript' src='http://christinabranson.github.io/palmetto/wp-content/plugins/pc-google-analytics/assets/js/frontend.min.js?ver=1.0.0'></script>
 <script type='text/javascript' src='http://christinabranson.github.io/palmetto/wp-content/plugins/simple-slider-ssp/views/ssp_skins/default/lib/jquery.flexslider-min.js?ver=1.4'></script>
 <link rel='https://api.w.org/' href='http://christinabranson.github.io/palmetto/wp-json/' />
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://christinabranson.github.io/palmetto/xmlrpc.php?rsd" />
@@ -67,6 +69,16 @@ img.emoji {
 <link rel="alternate" type="application/json+oembed" href="http://christinabranson.github.io/palmetto/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwordpress-dev-chrissybranso.c9users.io%2Fusing-advanced-custom-fields%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://christinabranson.github.io/palmetto/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwordpress-dev-chrissybranso.c9users.io%2Fusing-advanced-custom-fields%2F&#038;format=xml" />
 <!-- <meta name="NextGEN" version="2.1.43" /> -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-79681724-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
 
 	<!-- WP Customizer Styles -->
 	<style>
@@ -173,7 +185,7 @@ img.emoji {
 <li><code>number_of_bathrooms</code></li>
 <li><code>number_of_cars</code></li>
 <li><code>availability</code></li>
-<li><code>contact_information</code></li>
+<li><code>contact_link</code></li>
 </ul>
 <h3>Gallery Images</h3>
 <p>If you&#8217;d like to use Advanced Custom Fields to display an Orbit slider to display images on the Listing Template, you should have the following fields. <a href="http://christinabranson.github.io/palmetto/listing-images/">Note that there are several available options for this task</a>. </p>
@@ -192,9 +204,10 @@ img.emoji {
 		'fields' => array (<br />
 			array (<br />
 				'key' => 'field_5751ac42f64a3',<br />
-				'label' => 'Monthly Rent',<br />
+				'label' => 'Cost',<br />
 				'name' => 'monthly_rent',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Cost or monthly rent of the listing',<br />
 				'required' => 1,<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
@@ -208,6 +221,7 @@ img.emoji {
 				'label' => 'Number of Bedrooms',<br />
 				'name' => 'number_of_bedrooms',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Number of bedrooms for the listing',<br />
 				'required' => 1,<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
@@ -221,6 +235,7 @@ img.emoji {
 				'label' => 'Number of Bathrooms',<br />
 				'name' => 'number_of_bathrooms',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Number of bathrooms for the listing',<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
 				'prepend' => '',<br />
@@ -233,6 +248,7 @@ img.emoji {
 				'label' => 'Number of Cars',<br />
 				'name' => 'number_of_cars',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Number of car garage spaces for the listing',<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
 				'prepend' => '',<br />
@@ -245,6 +261,7 @@ img.emoji {
 				'label' => 'Availability',<br />
 				'name' => 'availability',<br />
 				'type' => 'text',<br />
+				'instructions' => 'Enter availability of the listing.',<br />
 				'required' => 1,<br />
 				'default_value' => '',<br />
 				'placeholder' => '',<br />
@@ -255,28 +272,16 @@ img.emoji {
 			),<br />
 			array (<br />
 				'key' => 'field_576861bd8a65c',<br />
-				'label' => 'Contact Information',<br />
-				'name' => 'contact_information',<br />
-				'type' => 'text',<br />
+				'label' => 'Contact Link',<br />
+				'name' => 'contact_link',<br />
+				'type' => 'page_link',<br />
+				'instructions' => 'Provide a link to your contact page.',<br />
 				'required' => 1,<br />
-				'default_value' => '',<br />
-				'placeholder' => '',<br />
-				'prepend' => '',<br />
-				'append' => '',<br />
-				'formatting' => 'html',<br />
-				'maxlength' => '',<br />
-			),<br />
-			array (<br />
-				'key' => 'field_576861d28a65d',<br />
-				'label' => '',<br />
-				'name' => '',<br />
-				'type' => 'text',<br />
-				'default_value' => '',<br />
-				'placeholder' => '',<br />
-				'prepend' => '',<br />
-				'append' => '',<br />
-				'formatting' => 'html',<br />
-				'maxlength' => '',<br />
+				'post_type' => array (<br />
+					0 => 'all',<br />
+				),<br />
+				'allow_null' => 0,<br />
+				'multiple' => 0,<br />
 			),<br />
 		),<br />
 		'location' => array (<br />
