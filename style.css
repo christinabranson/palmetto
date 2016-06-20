@@ -126,8 +126,33 @@ li {
   vertical-align: middle;
   display: inline;
   font-family: 'Cantarell', sans-serif;
-  margin-left: -10px;
+  margin-left: 10px;
 }
+
+.dropdown.menu > li.opens-left > .is-dropdown-submenu {
+    left: auto;
+    right: 0;
+    top: 0;
+    border: 0px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 300px;
+    padding: 0px 10px 10px 10px;
+}
+
+.menu.vertical > li {
+    display: block;
+    padding: 10px;
+}
+
+.menu.vertical > li:hover {
+    background: #E85302;
+}
+
+.menu.vertical > li:hover > a, .menu.vertical > li:hover {
+    color: #fff;
+}
+
 
 
 

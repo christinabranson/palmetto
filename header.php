@@ -33,6 +33,7 @@
 	  body .button:hover { background-color:  <?php echo get_option('body_link_hover_color'); ?>; }
 	  .top-bar ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
 	  #mobile-menu ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
+	  .menu.vertical > li:hover { background:  <?php echo get_option('body_link_hover_color'); ?>; }
 	</style>
 
 </head>
