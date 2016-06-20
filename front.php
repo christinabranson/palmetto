@@ -132,7 +132,7 @@ get_header(); ?>
   <section class="white-section">
     <div class="row white">
       <h2>Featured Listings</h2>
-      <p>Some of our featured long-term home rentals. <a href="#">View all listings on our Homes For Rent page.</a></p>
+      <p>Some of our featured long-term home rentals. <a href="/listings/">View all listings on our Homes For Rent page.</a></p>
     </div>
 		<div class="row" data-equalizer>
 			<?php for ($i = 0; $i <= 2; $i++) { ?>
@@ -168,11 +168,20 @@ get_header(); ?>
 
 
 <section id="blog">
-<div class="row" data-equalizer>
+<div class="row">
 <?php
  global $post;
  $myposts = get_posts('numberposts=3');
  $counter = 0;
+ 
+ if (sizeof($myposts) > 0) { ?>
+ 	  <h2>Latest Blog Entries</h2>
+      <p>The latest of our blog entries. <a href="/blog">View the entire blog here.</a></p>
+      </div>
+      <div class="row" data-equalizer>
+ 
+ <?php }
+ 
  foreach($myposts as $post) :?>
  
  
