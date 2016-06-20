@@ -172,7 +172,10 @@ get_header(); ?>
 <?php
  global $post;
  $myposts = get_posts('numberposts=3');
+ $counter = 0;
  foreach($myposts as $post) :?>
+ 
+ 
  
  <?php 
 	// Get thumbnail image if exists
@@ -182,7 +185,7 @@ get_header(); ?>
 	
 	$blog_placeholder_image= get_theme_mod( 'blog_placeholder_image', '' );
  ?>
- <div class="large-4 columns">&nbsp;
+ <div class="large-4 columns <?php if ( ($counter + 1) == sizeof($myposts)) { echo "end";} ?>">&nbsp;
  	<div class="listing-box" data-equalizer-watch>
  	<div class="listing-image">
  		<?php if ($thumb_url && strpos($thumb_url,'default') === false) { ?>
@@ -200,6 +203,7 @@ get_header(); ?>
  	</div>
  </div>
  </div>
+ <?php $counter++; ?>
  <?php endforeach; ?>
 
 
