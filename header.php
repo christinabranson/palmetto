@@ -24,15 +24,16 @@
 
 	<?php wp_head(); ?>
 
-<style>
-  body { background: <?php echo get_option('body_background_color'); ?> ; color:  <?php echo get_option('body_text_color'); ?>; }
-  body a { color:  <?php echo get_option('body_link_color'); ?>; }
-  body .button { background-color:  <?php echo get_option('body_link_color'); ?>; }
-  body a:hover { color:  <?php echo get_option('body_link_hover_color'); ?>; }
-  body .button:hover { background-color:  <?php echo get_option('body_link_hover_color'); ?>; }
-  .top-bar ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
-  #mobile-menu ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
-</style>
+	<!-- WP Customizer Styles -->
+	<style>
+	  body { background: <?php echo get_option('body_background_color'); ?> ; color:  <?php echo get_option('body_text_color'); ?>; }
+	  body a { color:  <?php echo get_option('body_link_color'); ?>; }
+	  body .button { background-color:  <?php echo get_option('body_link_color'); ?>; }
+	  body a:hover { color:  <?php echo get_option('body_link_hover_color'); ?>; }
+	  body .button:hover { background-color:  <?php echo get_option('body_link_hover_color'); ?>; }
+	  .top-bar ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
+	  #mobile-menu ul { color:  <?php echo get_option('body_link_color'); ?>; } /* Changes the color of any icons in the top navigation section */
+	</style>
 
 </head>
 
@@ -134,22 +135,11 @@
 				</li>
       			</div>
 			<div class="top-bar-right">
-				<!---
-				TODO: Develop or implement a plugin like https://wptavern.com/how-to-add-font-awesome-icons-to-wordpress-menus to add the Font Awesome icons to the navigation bar
-				for now I'm leaving them off
-				TODO: See https://wlcdesigns.com/2015/11/foundation-6-menu-walker-class-for-wordpress/ for Walker support
-				-->
 				<?php foundation_nav_menu(); ?>
 			</div>
 		</div>
 	</div>
 
-
-
-	<!--- HEADER FOR FEATURED HOME (MAIN PAGE) -->
-	<!--- TODO: This should be customizable in Customizr, check https://github.com/WordPress/twentysixteen/blob/master/header.php for implementation -->
-	<!--- SHOW ONLY FOR HOME PAGE -->
-	
 	<?php
 		$featued_pre_text = get_theme_mod( 'featured_property_pre_text', '' );
 		$featured_name = get_theme_mod( 'featured_property_property_header', '' );
@@ -171,14 +161,6 @@
 						<?php if ($featured_num_bathrooms) { ?><i class="fa fa-fire-extinguisher icon-rotate-90"></i> <?php echo $featured_num_bathrooms; ?> Bathrooms | <?php } ?>
 						<?php if ($featured_num_cars) { ?><i class="fa fa-car"></i> <?php echo $featured_num_cars; ?> Car | <?php } ?>
 						<?php if ($featured_url) { ?><a href="<?php echo $featured_url; ?>">View Listing</a></span> <?php } ?>
-					</div>
-				</div>
-			</header>
-		<?php } else { ?>
-			<header class="front-page">
-				<div class="featured-property">
-					<div class="row">
-					<span class="featured">Featured Property: Westbury Park</span><br/><span class="featured-sub"><i class="fa fa-bed"></i> 3 Bedrooms | <i class="fa fa-fire-extinguisher icon-rotate-90"></i> 2 Bathrooms | <i class="fa fa-car"></i> 1 Car | <a href="">View Listing</a></span>
 					</div>
 				</div>
 			</header>
