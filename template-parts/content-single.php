@@ -33,8 +33,6 @@
 
 			<?php foundation_entry_meta(); ?>
 
-			<?php foundation_excerpt(); ?>
-
 			<div itemprop="articleBody">
 			<?php
 				the_content();

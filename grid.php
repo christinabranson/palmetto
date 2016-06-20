@@ -5,12 +5,12 @@
  * The template for displaying grid based templates.
  *
  * @package WordPress
- * @subpackage Real Estate
- * @since Real Estate 0.1
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 
 get_header(); ?>
-<div class="row">
+
 		<?php
 		// Start the loop.
 			while ( have_posts() ) : the_post();
@@ -53,7 +53,7 @@ get_header(); ?>
             						<?php } elseif ($listing_placeholder_image) { ?>
             							<img src="<?php echo $listing_placeholder_image; ?>" />
             						<?php } else { ?>
-            							<p>Use the Wordpress customizer to upload a listing image or placeholder image.</p>
+            							<img src="<?php echo get_template_directory_uri() . '/assets/img/dft-placeholder-listing.jpg'; ?>" />
             						<?php } ?>
             						</a>
           					</div> <!-- listing image -->
@@ -80,7 +80,7 @@ get_header(); ?>
 
 
 
-
+<div class="row">
 	<?php
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) {

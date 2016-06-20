@@ -36,12 +36,11 @@ function foundation_setup() {
 	/*
 	 * Enable support for custom logo.
 	 *
-	 *  @since Twenty Sixteen 1.2
+	 *  @since Palmetto 0.1
 	 */
-//TODO: Change this to fit theme. I think this is 200 width
 	add_theme_support( 'custom-logo', array(
 		'height'      => 200,
-		'width'       => 200,
+		'width'       => 120,
 		'flex-height' => true
 		) );
 
@@ -57,8 +56,6 @@ function foundation_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'foundation' ),
-		'social'  => __( 'Social Links Menu', 'foundation' ),
 		'topbar-menu', __( 'Top Bar Menu','foundation' ),
 	) );
 

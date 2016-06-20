@@ -126,32 +126,11 @@ li {
   vertical-align: middle;
   display: inline;
   font-family: 'Cantarell', sans-serif;
-  margin-left: 10px;
+  margin-left: -10px;
 }
 
-.dropdown.menu > li.opens-left > .is-dropdown-submenu {
-    left: auto;
-    right: 0;
-    top: 0;
-    border: 0px;
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    width: 300px;
-    padding: 0px 10px 10px 10px;
-}
 
-.menu.vertical > li {
-    display: block;
-    padding: 10px;
-}
 
-.menu.vertical > li:hover {
-    background: #E85302;
-}
-
-.menu.vertical > li:hover > a, .menu.vertical > li:hover {
-    color: #fff;
-}
 
 .sub-menu-link {
   font-family: 'Cantarell', sans-serif;
@@ -284,14 +263,9 @@ footer {
 
 /* Blog Section */
 
-#blog {
-  margin-top: 20px;
-}
-
-#blog h2, #blog h3 {
+#blog h2 {
   margin-top: 10px;
 }
-
 
 #blog .meta {
   font-size: .8em;
@@ -315,7 +289,7 @@ figure {
   max-width: 100%;
   background: #fff;
   padding: 10px 10px 0px 10px;
-  margin: 20px 0px;
+  margin: 0px;
   border: 1px solid #ccc;
 }
 

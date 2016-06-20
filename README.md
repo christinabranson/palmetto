@@ -27,24 +27,7 @@ The theme comes standard with four basic page templates.
 
 
 
-### Customizer Options
+### Customization
 The theme comes with multiple built-in customizer options.
-#### Header
-* **Social Media Icons**: 
-- - Input phone #, email, social media links
-- - Front page header image
-- - Front page header text
-- 
 
 
-# TODO
-* Add styling to page navigation
-* Standardize page layouts and documentation
-* Add styling to blog pages on the landing page
-* Fix where comments appear
-* Add more documentation to Customizer
-* The "View Listing" button on the grid page doesn't work.. figure this out!
-* Bring back header images for posts with featured images
-* Figure out how to preserve meta data for featured images
-* Add functionality to replace logo with site text and description if no logo
-* Add front page featured property

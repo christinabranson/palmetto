@@ -9,7 +9,7 @@
 
 /* Get Custom Fields For Image Slider */
 $images = array();
-for ($i=1; $i <= 10; $i++) {
+for ($i=1; $i <= 20; $i++) {
 	$name = 'gallery_image_'.$i;
 	if ( get_field($name) ) {
 		$images[] = get_field($name);
@@ -42,7 +42,8 @@ for ($i=1; $i <= 10; $i++) {
 </div>
 </>
 <?php } ?>
-				<?php foundation_post_thumbnail(); ?>
+				<!-- Don't show featured image -->
+				<?php //foundation_post_thumbnail(); ?>
 				<div class="entry-content">
 					<?php
 						the_content();

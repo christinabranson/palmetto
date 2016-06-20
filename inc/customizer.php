@@ -415,7 +415,7 @@ $wp_customize->add_control(
         $wp_customize,
         	'show_featured_listings',
         array(
-            'label'          => __( 'Number Of Feature Panes', 'foundation' ),
+            'label'          => __( 'Show Feature Panes', 'foundation' ),
             'section'        => 'featured_listings_section',
             'settings'       => 'show_featured_listings',
 		'type'       => 'radio',
