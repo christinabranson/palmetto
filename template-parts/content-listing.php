@@ -15,7 +15,6 @@ for ($i=1; $i <= 20; $i++) {
 		$images[] = get_field($name);
 	}
 }
-//var_dump($images);
 ?>
 
 <section id="listing" itemscope itemtype ="http://schema.org/Residence">
@@ -34,8 +33,8 @@ for ($i=1; $i <= 20; $i++) {
     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
 	<?php foreach ($images as $image) { ?>
     		<li class="is-active orbit-slide">
-      			<img class="orbit-image" src="<?php echo $image['url']; ?>" alt="Space" itemprop="image">
-			<figcaption class="orbit-caption"><?php echo $image['caption']; ?></figcaption>
+      			<img class="orbit-image" src="<?php echo $image['url']; ?>" alt="<?php echo $image['caption']; ?>" itemprop="image">
+				<figcaption class="orbit-caption"><?php echo $image['caption']; ?></figcaption>
     		</li>		
 	<?php } ?>
   </ul>
@@ -59,7 +58,8 @@ for ($i=1; $i <= 20; $i++) {
 				</div><!-- .entry-content -->
 
 			</div>
-			<div class="large-4 columns" style="background: #fff; padding: 20px;">
+			<div class="large-4 columns">
+				<div class="panel">
 					<h3>Property Information</h3>
 					<?php if ( get_field('monthly_rent') ) { ?>
 						<div itemscope itemtype ="http://schema.org/Offer">
@@ -83,10 +83,30 @@ for ($i=1; $i <= 20; $i++) {
 					<?php if ( get_field('number_of_cars') ) { ?>
 						<p><i class="fa fa-car"></i> <?php echo get_field('number_of_cars'); ?> Cars</p>
 					<?php } ?>
+				</div>
+				
+				<div class="panel" style="margin-top: 20px;">
+					<h3>Contact Us</h3>
 					<?php if ( get_field('contact_link') ) { ?>
-						<a class="button text-center float-center" href="<?php echo get_field('contact_link'); ?>">Contact Us For Info</a>
+						<a class="button text-center float-center" href="<?php echo get_field('contact_link'); ?>">Contact Us For Info</a><br/>
 					<?php } ?>
+					
+					<!--- PHONE NUMBER -->
+					<?php
+						$phone = get_theme_mod( 'phone_number', '' );
+						if ($phone) { ?>
+							<i class="fa fa-phone"></i> <?php echo $phone; ?> <br/>
+						<?php } ?> 
+					<!--- EMAIL ADDRESS -->
+					<?php
+						$email = get_theme_mod( 'email_address', '' );
+						if ($email) { ?>
+							<i class="fa fa-envelope-o"></i> <?php echo $email; ?> <br/>
+						<?php } ?>
+				</div>
 			</div>
+			
+			
 		</div>
 	</article><!-- #post-## -->
 </section>
