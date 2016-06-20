@@ -83,8 +83,9 @@ for ($i=1; $i <= 20; $i++) {
 					<?php if ( get_field('number_of_cars') ) { ?>
 						<p><i class="fa fa-car"></i> <?php echo get_field('number_of_cars'); ?> Cars</p>
 					<?php } ?>
-
-					<a class="button text-center float-center" href="">Contact Us For Info</a>
+					<?php if ( get_field('contact_link') ) { ?>
+						<a class="button text-center float-center" href="<?php echo get_field('contact_link'); ?>">Contact Us For Info</a>
+					<?php } ?>
 			</div>
 		</div>
 	</article><!-- #post-## -->
