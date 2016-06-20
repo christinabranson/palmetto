@@ -1,17 +1,22 @@
 <?php
 /**
- * Template for displaying search forms in Twenty Sixteen
+ * Template for displaying search forms
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 ?>
 
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label>
-		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'foundation' ); ?></span>
-		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'foundation' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-	</label>
-	<button type="submit" class="search-submit"><span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', 'foundation' ); ?></span></button>
+	<div class="row">
+		<div class="small-12 large-8 columns">
+			<label>
+				<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'foundation' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+			</label>
+		</div>
+		<div class="small-12 large-4 columns">
+			<button type="submit" class="search-submit button"><?php echo _x( 'Search', 'submit button', 'foundation' ); ?></button>
+		</div>
+	</div>
 </form>
