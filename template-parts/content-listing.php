@@ -102,11 +102,14 @@ for ($i=1; $i <= 20; $i++) {
 						$email = get_theme_mod( 'email_address', '' );
 						if ($email) { ?>
 							<i class="fa fa-envelope-o"></i> <?php echo $email; ?> <br/>
-						<?php } ?>
+					<?php } ?>
+				</div>
+				
+				<div class="panel" style="margin-top: 20px;">
+					<h3>Searh More Properties</h3>
+					<?php get_search_form(); ?>
 				</div>
 			</div>
-			
-			
 		</div>
 	</article><!-- #post-## -->
 </section>
