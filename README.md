@@ -1,33 +1,19 @@
 # Palmetto
-Palmetto is a Wordpress theme specifically created for a real estate agent. It is designed specifically for real estate or rental agencies as a way to highlight their listings, 
+Palmetto is a WordPress theme designed specifically for real estate and rental agencies. It features modules on the home page designed to showcase featured listings. It also has a number of custom page templates, including a listing template to showcase property information.
+
+![Palmetto Screenshot](https://raw.githubusercontent.com/christinabranson/palmetto/master/screenshot.png)
+
+Site demo and documentation available at: https://christinabranson.github.io/palmetto
 
 ## Requirements
 * This theme was built on Wordpress 4.5.2 and I intend to update it as needed to be compatible with new versions.
 * Some of the functionality on the listing page is to be used with the Advanced Custom Fields plugin in order to supply standard real estate tokens.
-* 
-
-## Recomended Usage
-
-## Theme Details
 
 ### General
 * This theme is built using the Foundation front-end framework. As a result, it is meant to be fully responsive across all devices. It should be compatible with all major web browsers.
-* 
 
-### Theme Page Templates
-The theme comes standard with four basic page templates.
-* **Home Template**: Designed to be the front/landing page, this template is designed...
-* **Listing Template**: This template uses custom fields from the Advanced Custom Fields template to populate the page with some standard real estate variables like number of bedrooms and price. It also features an Orbit slider (with image inputs from the advaned custom fields setting). Finally, the listings pages are optimied for SEO by using the following markup schemas: SingleFamilyResidence.
-* **Full-Width Page**: A standard page template that takes up the full width of the viewing area.
-* **Page Template with Sidebar**: A standard page template that includes room for a page-specific sidebar.
-* **Thin Page**: 
-
-### Sidebars and Widgets
-
-
-
-
-### Customization
-The theme comes with multiple built-in customizer options.
-
-
+### Documentation
+Documentation is located on the demo website at: https://christinabranson.github.io/palmetto Some important posts to highlight are:
+* [Palmetto Theme Customization](http://christinabranson.github.io/palmetto/palmetto-theme-customization/)
+* [Palmetto Page Templates](http://christinabranson.github.io/palmetto/palmetto-page-templates/)
+* [Suggested Site Structure](http://christinabranson.github.io/palmetto/suggested-page-structure/)
