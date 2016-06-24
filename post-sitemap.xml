@@ -1,0 +1,157 @@
+
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://christinabranson.github.io/palmetto/main-sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/blog/</loc>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/blog/</loc>
+		<lastmod>2016-06-20T22:57:55+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/palmetto-theme-customization/</loc>
+		<lastmod>2016-06-20T20:44:38+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+		<image:image>
+			<image:lochttp://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_all.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Overview]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_identity.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Site Identity]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_colors.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Colors]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_header.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Header Image]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_menus.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Menus]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_widgets.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Widgets]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_static.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Static Page]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_contact.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Contact Header and Social Media Icons]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_panes.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Feature Panes]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_featured_listings.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Home Page Featured Listings]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_placeholder.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Custom Placeholder Images]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_customize_featured_header.png</image:loc>
+			<image:caption><![CDATA[Palmetto Theme Customization: Featured Property Header]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/palmetto-page-templates/</loc>
+		<lastmod>2016-06-20T20:47:23+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/suggested-page-structure/</loc>
+		<lastmod>2016-06-20T20:47:54+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/palmetto-placeholder-images/</loc>
+		<lastmod>2016-06-20T20:48:18+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/Palmetto-Theme-Screenshots.jpg</image:loc>
+			<image:caption><![CDATA[Front Page Placeholder Image Location]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/Palmetto-Theme-Screenshots-1.jpg</image:loc>
+			<image:caption><![CDATA[Listings Page Placeholder Image Location]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/Palmetto-Theme-Screenshots-2.jpg</image:loc>
+			<image:caption><![CDATA[Palmetto Customizer Option: Placeholder Images]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/palmetto-navigation-menu/</loc>
+		<lastmod>2016-06-20T20:55:46+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_menu_1.png</image:loc>
+			<image:caption><![CDATA[Palmetto Menu Editor]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_menu_2.png</image:loc>
+			<image:caption><![CDATA[Palmetto Menu Editor]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/listing-images/</loc>
+		<lastmod>2016-06-20T21:32:21+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/10.jpg</image:loc>
+			<image:title><![CDATA[Living Room]]></image:title>
+			<image:caption><![CDATA[Living Room]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_using_acf.png</image:loc>
+			<image:caption><![CDATA[Palmetto: Using Advanced Custom Fields to add a slider]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_using_acf_1.png</image:loc>
+			<image:caption><![CDATA[Palmetto: Using Advanced Custom Fields to select an image]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/palmetto_using_acf_2.png</image:loc>
+			<image:caption><![CDATA[Palmetto: Selected image showing up in the Advanced Custom Fields selector]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/howtofeatureimage.jpg</image:loc>
+			<image:caption><![CDATA[How To Set A Featured Image]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/palmetto-credits-appreciation/</loc>
+		<lastmod>2016-06-20T21:50:30+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://christinabranson.github.io/palmetto/using-advanced-custom-fields/</loc>
+		<lastmod>2016-06-20T22:57:55+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+		<image:image>
+			<image:loc>http://christinabranson.github.io/palmetto/wp-content/uploads/2016/06/Untitled-design.jpg</image:loc>
+			<image:caption><![CDATA[Property Information On Listing Template]]></image:caption>
+		</image:image>
+	</url>
+</urlset>
+<!-- XML Sitemap generated by Yoast SEO -->
