@@ -1,12 +1,10 @@
 <?php
 /**
- * Custom Twenty Sixteen template tags
- *
- * Eventually, some of the functionality here could be replaced by core features.
+ * Custom Palmetto tags
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 
 function foundation_entry_meta() {

@@ -1,8 +1,10 @@
 <?php
 /**
- * Foundation Theme Customizer
+ * Theme Customizer
  *
- * @package foundation
+ * @package WordPress
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 
 

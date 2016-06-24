@@ -3,8 +3,8 @@
  * The template for the content bottom widget areas on posts and pages
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 
 if ( ! is_active_sidebar( 'sidebar-listing' ) ) {

@@ -3,8 +3,8 @@
  * The template for the content bottom widget areas on posts and pages
  *
  * @package WordPress
- * @subpackage Real Estate
- * @since Real Estate 0.1
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' )  && ! is_active_sidebar( 'sidebar-4' ) ) {
 	return;

@@ -4,13 +4,10 @@
  * 
  * The template for displaying pages
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage Real Estate
- * @since Real Estate 0.1
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 
 get_header(); ?>

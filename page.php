@@ -8,8 +8,8 @@
  * other "pages" on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage Real Estate
- * @since Real Estate 0.1
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 
 get_header(); ?>

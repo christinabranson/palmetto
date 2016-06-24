@@ -3,8 +3,8 @@
  * The template used for displaying page content
  *
  * @package WordPress
- * @subpackage Real Estate
- * @since Twenty Real Estate 0.1
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 
 /* Get Custom Fields For Image Slider */

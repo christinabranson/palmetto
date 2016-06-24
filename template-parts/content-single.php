@@ -3,8 +3,8 @@
  * The template part for displaying single posts
  *
  * @package WordPress
- * @subpackage Real Estate
- * @since Real Estate 0.1
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 ?>
 

@@ -4,11 +4,9 @@
  *
  * Displays all of the head element and everything up until the "site-content" div.
  *
- * TODO: If a plugin (Amazing Carousel) is used that includes Bootstrap, there will be formatting errors!!!
- *
  * @package WordPress
- * @subpackage Real Estate
- * @since Real Estate
+ * @subpackage Palmetto
+ * @since Palmetto 0.1
  */
 
 ?><!DOCTYPE html>
