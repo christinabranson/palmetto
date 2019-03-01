@@ -3,7 +3,7 @@ Palmetto is a WordPress theme designed specifically for real estate and rental a
 
 ![Palmetto Screenshot](https://raw.githubusercontent.com/christinabranson/palmetto/master/screenshot.png)
 
-Site demo and documentation available at: https://christinabranson.github.io/palmetto
+Site demo and documentation available at: htts://christinabranson.github.io/palmetto/
 
 ## Requirements
 * This theme was built on Wordpress 4.5.2 and I intend to update it as needed to be compatible with new versions.
